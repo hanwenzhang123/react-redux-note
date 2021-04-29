@@ -45,6 +45,23 @@ Which of the following JSX snippets applies a class of 'container' to the div?
  Babel
 
 What is the purpose of curly braces { } in JSX?
- 
+  They are used to evaluate JavaScipt expressions
+  
+Elements written in JSX get transpiled to: 
+  React.createElement() functions
 
-Is using JSX with React optional? Yes
+Is using JSX with React optional? 
+  Yes
+
+
+Display the value of the petName variable inside the <p> tags.
+
+const petName =  'Ernie';
+const header = (
+  <header>
+    <p>I have a pet named {petName}.</p> 
+  </header>
+);
+
+
+   
