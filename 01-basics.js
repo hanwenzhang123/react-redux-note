@@ -35,7 +35,7 @@ const header = React.createElememt(
 
 // render the react element to the DOM
 //  accept 2 arguments
-//  react/js element descrip the element you want to render element
+//  react/js element describe the element you want to render element
 //  actually element you want to update or where render to
 
  ReactDOM.render(    //this is what create and update the DOM, and it manages the root element
