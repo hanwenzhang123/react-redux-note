@@ -133,3 +133,12 @@ class Clock extends React.Component {
     );
   }
 }
+
+
+
+Complete the code so that the isConfirmed state updates its value based on the previous state.
+confirmGuest = () => {
+  this.setState( prevState => ({ 
+    isConfirmed: !.isConfirmed
+  }));
+}
