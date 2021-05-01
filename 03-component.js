@@ -1,4 +1,5 @@
 A component is a piece of UI that you can reuse. 
+Everything you use in React is component
 Everything in react is considered to be a component
 Just like you're able to reuse code in JavaScript with functions, a component lets you reuse code that renders a part of your UI. 
 Being able to split your UI code into independent, reusable pieces, and think about each piece in isolation is one the most embraced features of React.
