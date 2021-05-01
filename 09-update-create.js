@@ -24,6 +24,7 @@ setState() accepts a callback function that produces state based on the previous
   
 
 //Creating the Application State
+  // Data that is avaiable the entire application
   //state  is a an object that stores all the data that the component itself needs and data that might get passed down to its children.
 
 class App extends React.Component {
@@ -75,3 +76,12 @@ ReactDOM.render(
 );
   
   
+//component State
+ state that is specific to a componen and not shared outside of the component
+ 
+ class Counter extends React.Component { }
+
+
+
+
+     
