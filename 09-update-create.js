@@ -20,13 +20,16 @@ setState() accepts a callback function that produces state based on the previous
         score: prevState.state.score - 1
     }));
   }
+  
+  
 
 //Creating the Application State
+  //state  is a an object that stores all the data that the component itself needs and data that might get passed down to its children.
 
 class App extends React.Component {
 
   state = {
-    players: [
+    players: [    //set it as an array
       {
         name: "Guil",
         id: 1
