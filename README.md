@@ -1,2 +1,7 @@
 # react-note
-Document the major concepts I have learned throughout the courses.
+``` javascript
+import React from "react"; 
+import ReactDOM from "react-dom";
+
+ReactDOM.render(what to show, where to show it);
+```
