@@ -1,4 +1,5 @@
 //https://reactjs.org/docs/create-a-new-react-app.html
+//https://reactjs.org/docs/add-react-to-a-website.html#add-react-in-one-minute
 
 //npx create-react-app my-app
 //cd my-app
