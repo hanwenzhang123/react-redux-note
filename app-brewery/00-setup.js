@@ -26,10 +26,11 @@ ReactDOM.render(
 <html lang="en">
   <head>
     <title>React App</title>
+    <link rel="stylesheet" href="styles.css" />   //css file
   </head>
   <body>
     <div id="root"></div>
-    <script src="../src/index.js"></script>
+    <script src="../src/index.js"></script> 
   </body>
 </html>
 
