@@ -11,7 +11,6 @@ npm start
 Then open http://localhost:3000/ to see your app
 
 
-
 //index.js
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -20,6 +19,7 @@ ReactDOM.render(
   <h1>Hello World!</h1>,
   document.getElementById('root')
 );
+
 
 //index.html
 <!DOCTYPE html>
@@ -43,3 +43,4 @@ ReactDOM.render(
 
 <!-- Load our React component. -->
 <script src="../src/index.js"></script>
+ 
