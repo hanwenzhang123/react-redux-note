@@ -28,9 +28,9 @@ import ReactDOM from "react-dom";
 const date = new Date();
 const currentTime = date.getHours();
 
-let greeting;
+let greeting;   //set the value empty first then manipulate
 
-const customStyle = {
+const customStyle = {   //set the value empty first then manipulate
   color: ""
 };
 
