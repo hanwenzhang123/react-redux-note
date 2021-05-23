@@ -112,7 +112,7 @@ export default Card;    //export so we can use from another file
 
 
 //contact.js
-const contacts = [
+const contacts = [    //an array of js objects
   {
     name: "Beyonce",
     imgURL:
