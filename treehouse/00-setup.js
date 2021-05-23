@@ -10,10 +10,9 @@ npm start
 
 //Both React and ReactDOM are available over a CDN.
 //react library code on html:
+
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-
-
 The versions above are only meant for development, and are not suitable for production. Minified and optimized production versions of React are available at:
 
 <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
