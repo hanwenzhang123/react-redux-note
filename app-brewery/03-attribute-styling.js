@@ -6,12 +6,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const img = "https://picsum.photos/200";
+const img = "https://picsum.photos/200";    //{img + "?grayscale"} - appending the query
 
 ReactDOM.render(
   <div>
     <h1 className="heading" contentEditable='true' spellCheck='false'>My Favourite Foods</h1>
-    <img alt="random" src={img + "?grayscale"} />
+    <img alt="random" src={img + "?grayscale"} /> 
 
     <img
       className="food-img"
