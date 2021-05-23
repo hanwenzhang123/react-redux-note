@@ -1,7 +1,5 @@
 //JSX Attributes & Styling React Elements
-
 //https://www.w3schools.com/tags/ref_standardattributes.asp
-
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -31,4 +29,4 @@ ReactDOM.render(
   </div>,
   document.getElementById("root")
 );
-
+  
