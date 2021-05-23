@@ -20,9 +20,26 @@ ReactDOM.render(      //display, take only a single HTML element
 
 
 
-//vanilla javascript, same code
-
+//vanilla javascript, same code as above
 let h1 = document.createElement('h1');
 h1.innerhtml = 'Hello World!';
 document.getElementById('root').appendChild(h1);
   
+
+
+//JSX Code Practice
+import React from "react"; 
+import ReactDOM from "react-dom";
+
+ReactDOM.render( 
+  <div>
+    <h1>My favorite foods</h1>
+    <ul>
+      <li>Bacon</li>
+      <li>Noodles</li>
+      <li>Jamon</li>
+    </ul>
+  </div>,
+  document.getElementById("root") 
+);
+ 
