@@ -59,4 +59,15 @@ function App() {
 }
 
 export default App;
-   
+ 
+
+
+//Challenge
+import emojipedia from "./emojipedia";
+
+const newEmojipedia = emojipedia.map(function(emojiEntry) {
+  return emojiEntry.meaning.substring(0, 100);    //cap at 100
+});
+
+console.log(newEmojipedia);
+ 
