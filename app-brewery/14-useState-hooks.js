@@ -57,4 +57,29 @@ export default App;
 
 
 
-//useState Hook Practice
+//useState Hook Practice - Update local time clock
+
+import React, { useState } from "react";
+
+function App() {
+  setInterval(updateTime, 1000);    //time updates every second
+
+  const now = new Date().toLocaleTimeString();
+
+  const [time, setTime] = useState(now);    //starting point - now
+
+  function updateTime() {
+    const newTime = new Date().toLocaleTimeString();
+    setTime(newTime);
+  }
+
+  return (
+    <div className="container">
+      <h1>{time}</h1>
+      <button onClick={updateTime}>Get Time</button>
+    </div>
+  );
+}
+
+export default App;
+   
