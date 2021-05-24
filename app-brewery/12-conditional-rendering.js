@@ -31,3 +31,69 @@ function App() {
 }
 
 export default App;
+     
+       
+//Input.jsx
+import React from "react";
+
+function Input(props) {
+  return <input type={props.type} placeholder={props.placeholder} />;
+}
+
+export default Input;
+    
+       
+//Login.jsx
+import React from "react";
+import Input from "./Input";
+
+function Login() {
+  return (
+    <form className="form">
+      <Input type="text" placeholder="Username" />
+      <Input type="password" placeholder="Password" />
+      <button type="submit">Login</button>
+    </form>
+  );
+}
+
+export default Login;
+      
+
+       
+//example2
+//App.jsx
+import React from "react";
+import Form from "./Form";
+
+var userIsRegistered = true;
+
+function App() {
+  return (
+    <div className="container">
+      <Form isRegistered={userIsRegistered} />
+    </div>
+  );
+}
+
+export default App;
+
+       
+//Form.jsx
+import React from "react";
+
+function Form(props) {
+  return (
+    <form className="form">
+      <input type="text" placeholder="Username" />
+      <input type="password" placeholder="Password" />
+      {!props.isRegistered && (
+        <input type="password" placeholder="Confirm Password" />
+      )}
+
+      <button type="submit">{props.isRegistered ? "Login" : "Register"}</button>
+    </form>
+  );
+}
+
+export default Form;
