@@ -29,4 +29,37 @@ function App() {
 export default App;
 
 
+
+
+//Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).
+//<dl> element represents a description list. <dt> a list of groups of terms. <dd> a list of groups of descriptions 
+
+import React from "react";
+import Entry from "./Entry";
+import emojipedia from "../emojipedia";
+
+function createEntry(emojiTerm) {
+  return (
+    <Entry
+      key={emojiTerm.id}
+      emoji={emojiTerm.emoji}
+      name={emojiTerm.name}
+      description={emojiTerm.meaning}
+    />
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <h1>
+        <span>emojipedia</span>
+      </h1>
+      <dl className="dictionary"> {emojipedia.map(createEntry)} </dl>
+    </div>
+  );
+}
+
+export default App;
   
+ 
