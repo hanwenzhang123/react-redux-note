@@ -7,7 +7,6 @@ import App from "./components/App";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 ```
-\
 App.jsx
 ``` javascript
 import React from "react"; 
