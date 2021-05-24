@@ -19,6 +19,15 @@ document.getElementById("root")
 );
 
 
+//Why do you need 2 curly braces for React inline styling?
+
+//The exterior set of curly braces are the same as the one as before: they're letting JSX know you want a JS expression. 
+//The interior set of curly braces represent a JavaScript object, meaning you're passing in a object to the style attribute.
+
+<button style={{ backgroundColor: isMouseOver ? "black" : "White"}} >
+
+  
+  
   
 //React Styling Practice
 
