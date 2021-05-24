@@ -1,4 +1,5 @@
 //mapping is very useful especially handling arrays
+//when use jaavascript inside of html, put it in {}
 
 import React from "react";
 import Card from "./Card";
