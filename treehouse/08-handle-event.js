@@ -20,7 +20,7 @@ onClick={this.incrementScore.bind(this)} - bind it first then use this in the re
 onClick={() => this.incrementScore()}
 
 
-We don't need to bind it if we use arrow function because the function gets to bind in the component instance
+We do not need to bind it if we use arrow function because the function gets to bind in the component instance
 
 incrementScore() => {   
     this.setState({   
