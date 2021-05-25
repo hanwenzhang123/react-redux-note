@@ -9,7 +9,7 @@ function App() {
   function addItem(inputText) {   //set the inputText as the parameters and use props
     setItems(prevItems => {   //set the inputText as the items
       return [...prevItems, inputText];   //spread the previous items with the new input text
-    });
+    });                               //spread all the existing value currently in our items, and add to our final object
   }
 
   function deleteItem(id) {
