@@ -47,8 +47,8 @@ function App() {
 
     setContact(prevValue => {
       return {
-        ...prevValue,   //spread out
-        [name]: value   //your key variable inside [] to get the actual value
+        ...prevValue,   //spread out previous the fName, lName, email properties
+        [name]: value   //your key variable inside [] to get the actual value we passes in
       };
     });
   }
