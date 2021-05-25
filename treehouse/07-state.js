@@ -1,6 +1,6 @@
 //State
 "state" is the data you want to track in your app.
-State is what allows you to create components that are dynamic and interactive, and it's the only data that changes over time.
+State is what allows you to create components that are dynamic and interactive, and it is the only data that changes over time.
 Satte only available in class components.
 
 
