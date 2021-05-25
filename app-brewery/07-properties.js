@@ -1,5 +1,6 @@
 //React Props
 //“Props” is a special keyword in React, which stands for properties and is being used for passing data from one component to another.
+//props is read only
 
 import React from "react";
 import ReactDOM from "react-dom";
