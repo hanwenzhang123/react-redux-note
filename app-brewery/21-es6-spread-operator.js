@@ -32,6 +32,7 @@ console.log(person); // should print  Object { name="John"}
 
 
 
+
 //App.jsx
 import React, { useState } from "react";
 
@@ -86,3 +87,24 @@ function App() {
 
 export default App;
 
+
+
+
+//Question
+setContact(prevValue => {
+
+return {
+
+  ...prevValue,
+
+[name]: value
+
+};
+
+
+these two lines are inside of a object,
+...prevValue is the previous value of the hook , shall be contact here
+and the [name]:value comes from the event.target.name and event.target.value
+while using the spread Operator , the name has to be in a square bracket or it's gonna be treated as string.
+
+   
