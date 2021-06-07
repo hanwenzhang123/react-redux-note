@@ -13,7 +13,7 @@ class Counter extends React.Component {   //extends from react.component
     return (
       <div className="counter">     
         <button className="counter-action decrement"> - </button>
-        <span className="counter-score">{ this.props.score }</span>  
+        <span className="counter-score">{ this.props.score }</span>  {/* when accessing props in class, we need 'this' keyword */}
         <button className="counter-action increment"> + </button>
       </div>
     );
