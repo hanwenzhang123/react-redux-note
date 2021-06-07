@@ -16,7 +16,7 @@ const Player = (props) => {
   return (
     <div className="player">
       <span className="player-name">
-        <button className="remove-player" onClick={() => props.removePlayer(props.id)}>✖</button>
+        <button className="remove-player" onClick={() => props.removePlayer(props.id)}>✖</button>   /* add the button */
         { props.name }
       </span>
 
@@ -74,11 +74,11 @@ class App extends React.Component {
       }
     ]
   };
-
-  handleRemovePlayer = (id) => {
-    this.setState( prevState => {
-      return {
-        players: prevState.players.filter( p => p.id !== id )
+              //this will be called at later interaction when clicked delete button which will change the state at the parent component
+  handleRemovePlayer = (id) => {    //take an id parameters for the players to remove from the state.
+    this.setState( prevState => {   //update state
+      return {                      //filter used to remove an element from the array without affecting the original array
+        players: prevState.players.filter( p => p.id !== id ) //return players except for the one we want to remove
       };
     });
   }
@@ -97,7 +97,7 @@ class App extends React.Component {
             name={player.name}
             id={player.id}
             key={player.id.toString()} 
-            removePlayer={this.handleRemovePlayer}           
+            removePlayer={this.handleRemovePlayer}     // each player component contains a removePlayer function
           />
         )}
       </div>
