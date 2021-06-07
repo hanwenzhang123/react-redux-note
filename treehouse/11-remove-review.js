@@ -1,7 +1,5 @@
 //Remove Items From State
-
 use the filter() array iteration method to remove an object from the players array in state.
-
 
 const Header = (props) => {
   return (
@@ -125,6 +123,13 @@ this.state()
 What type of state is available to the entire app?
   Application state
 
+Complete the code so that the isConfirmed state updates its value based on the previous state.
+confirmGuest = () => {
+  this.setState( prevState => ({ 
+    isConfirmed: !.isConfirmed
+  }));
+}
+
 Complete the code to display the value of a prop named time. Note that Clock is a class component.
 class Clock extends React.Component {
   render() {
@@ -133,12 +138,4 @@ class Clock extends React.Component {
     );
   }
 }
-
-
-
-Complete the code so that the isConfirmed state updates its value based on the previous state.
-confirmGuest = () => {
-  this.setState( prevState => ({ 
-    isConfirmed: !.isConfirmed
-  }));
-}
+  
