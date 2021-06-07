@@ -119,7 +119,7 @@ The only way react allows you to update is by using its build-in setState() meth
 Data from state is distributed through the application via ___.
 props
 
-State may be updated asynchronously. Whenever you need to update state based on previous state, you shouldn't rely on _____ to calculate the next state.
+State may be updated asynchronously. Whenever you need to update state based on previous state, you shouldn not rely on _____ to calculate the next state.
 this.state()
 
 What type of state is available to the entire app?
