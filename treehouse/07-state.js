@@ -30,7 +30,7 @@ class Counter extends React.Component {   //extends from react.component
 // score is our state in this app because it changes
 
 class Counter extends React.Component {
-// better way using structor super state
+// better way using structor super state, just state = object
 // state = {
 // score: 0
 // }
@@ -50,4 +50,5 @@ class Counter extends React.Component {
     );
   }
 }
+// we can now delete the previous hardcoded score props passed to Counter and player component in the players list
 
