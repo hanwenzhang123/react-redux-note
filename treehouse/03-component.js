@@ -5,15 +5,18 @@ Just like you are able to reuse code in JavaScript with functions, a component l
 Being able to split your UI code into independent, reusable pieces, and think about each piece in isolation is one the most embraced features of React.
 
 //create a header component
+1. Defind the component as a function or class
+2. Display the component in the UI with a JSX tag {}
+
+
 function Header() {   //react component begin with capital 
-  return (
+  return (    //return react component
     <header>
       <h1>Scoreboard</h1>
       <span className='stats'>Players: 1</span>
     </header>
   );
 }
-
 
 
 //Use a Component with JSX
