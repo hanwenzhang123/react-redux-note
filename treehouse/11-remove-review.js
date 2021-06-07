@@ -18,7 +18,7 @@ const Player = (props) => {
         { props.name }
       </span>
 
-      <Counter />
+      <Counter />   //class Counter as composition
     </div>
   );
 }
