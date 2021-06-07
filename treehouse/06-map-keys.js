@@ -1,14 +1,19 @@
+//Iterating and Rendering with map()
+//Learn how to iterate over data and render elements in React.
+
+map() - map returns an array as a value (the transformed original array) where ForEach returns 'undefined'
+loop over data in react
+
 Key
 React gives elements a special built-in prop named key to quickly know which items were changed, added, or removed
 A unique identifier that gives react a way to quickly and reliably identify an elemnt in the list
 
-map() - map returns an array as a value (the transformed original array) where ForEach returns 'undefined'
 
-const players = [
+const players = [   //get the data into our app, we need to pass the players array as the props to the  main App component
   {
     name: "Guil",
     score: 50,
-    id: 1   //set each different unique number
+    id: 1   //set each different unique number, React does not recommend using index for unique keys, because the index might not always uniquely identify elements. It's usually best to use a unique id.
   },
   {
     name: "Treasure",
@@ -63,11 +68,11 @@ const App = (props) => {
     <div className="scoreboard">
       <Header 
         title="Scoreboard" 
-        totalPlayers={props.initialPlayers.length} 
+        totalPlayers={props.initialPlayers.length}    //change here to the length to count how many players
       />
 
-      {/* Players list */}       
-      {props.initialPlayers.map( player =>    //.map() is a javasript component, receive and process each item in the array
+      {/* Players list */}       //every javascript inside jsx needs to be placed insie {}.
+      {props.initialPlayers.map( player =>    //.map() is a javasript component, receive and process each item in the array, accepts a callback here
         <Player         //iterate over data and render elements in React.
           name={player.name}
           score={player.score}
@@ -78,10 +83,11 @@ const App = (props) => {
   );
 }
 
-ReactDOM.render(        // App is where the component is being rendered
-  <App initialPlayers={players} />,   
+ReactDOM.render(        // App is where the component is being rendered 
+  <App initialPlayers={ players } />,   
   document.getElementById('root')
-);    //pass the player array as a prop here with objects
+);    //we create an initialPlayers as props with the players array we set
+//pass the player array as a prop here with objects
 
 
 
@@ -98,7 +104,6 @@ How should you write an iteration method like map() in JSX?
   
 Props are 'read only' or immutable. A component can only read the props given to it, never change them.
   
-
 Pass the score prop the number value 100.
 <Student name="Gob" score={ 100 } />
 
