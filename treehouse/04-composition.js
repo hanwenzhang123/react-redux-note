@@ -20,14 +20,14 @@ const Header = () => {
   );
 }
 
-const Player = () => {    
+const Player = () => {        //component should be as small as possible, not having too  many responsibilities so we split player and counter
   return (
     <div className='player'>
       <span className='player-name'>
         Guil
       </span>
 
-      <Counter />   {/* composition */}
+      <Counter />   {/* composition  - a component contains another component */}
     </div>
   )
 }
@@ -55,7 +55,7 @@ const App = () => {
 }
 
 ReactDOM.render(
-  header,
+  <App />,      //top-level component with all functions
   document.getElementById('root')
 );
 
