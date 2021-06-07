@@ -34,8 +34,9 @@ const header = React.createElememt(
 //  react/js element describe the element you want to render element
 //  actually element you want to update or where render to
 
+
  ReactDOM.render(    //this is what create and update the DOM, and it manages the root element
-    header,     //the header element
+    title,     //the title element
     document.getElementById('root')     //DOM element with DI root, container element
  ); //the code will be rendered to <div id='root'></div> in html
 //it is render's job to interprete the element object and create DOM out of them 
@@ -60,6 +61,5 @@ React only manages what gets rendered to t he DOM via ReactDOM.render.
 It is the job of render() to interpret the element objects and create DOM nodes out of them.
 React do not manipulates and updates the DOM directly.
 React creates objects that describes DOM nodes.
-
-
-    
+   
+  
