@@ -1,5 +1,8 @@
 Every React component and element can receive a list of attributes called properties (or props). 
 
+props look like custom HTML attributes that provide information to the tag.
+
+
 Props 
 it's how you get data into a component.
 A list of properties used to pass data to a component.
@@ -30,7 +33,8 @@ React will throw the error: // Cannot assign to read only property 'title' of ob
 
 
 //app.js
-{*/ props is standard but you can use any name for parameter here. */}
+//props look like custom HTML attributes that provide information to the tag.
+//{*/ props is standard but you can use any name for parameter here. */}
 
 const Header = (props) => {
   return (
@@ -45,12 +49,13 @@ const App = () => {
   return (
     <div className="scoreboard">
       <Header title="Scoreboard" totalPlayers={1} />    {/* prop looks like html attributes, if use data other than string, use {} like number */}
-
+                                      //the component updates the content that display inside the {} with its assigned components
       {/* Players list */}
       <Player />
     </div>
   );
 }
+
 
 
 
