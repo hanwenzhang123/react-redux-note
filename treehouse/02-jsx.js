@@ -20,12 +20,12 @@ A syntax extension to JavaScript that is used with React to describe elements in
 
 const desc = 'I just learned how to create a React node and render it into the DOM.';
 const myTitleID = 'main-title';
-const name = 'Guil';
+const name = 'Guil';    //Embed JavaScript Expressions in JSX - {}, allows you to make your JSX more dynamic.
 
 const header = (
   <header>
-    <h1 id={myTitleID}>{ name }'s First React Element!</h1> 
-    <p className="main-desc">{ desc }</p> 
+    <h1 id = { myTitleID }>{ name }'s First React Element!</h1> 
+    <p className = "main-desc"> { desc }</p> 
   </header>
 );
 
