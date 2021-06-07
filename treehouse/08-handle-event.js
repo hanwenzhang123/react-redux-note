@@ -10,19 +10,20 @@ The only way React allows you to update a component's state is by using its buil
 When you create a class component that extends from React.Component, any custom methods you create are not bound to the component by default. 
 You need to bind your custom methods, so that this refers to the component instance (the parent that owns the method). 
 
-incrementScore() {   
-    this.setState({   
+
+incrementScore() {          //state is never modified directly
+    this.setState({             //this is referred to the parent class
       score: this.state.score + 1
     })  
   }
   
 onClick={this.incrementScore.bind(this)} - bind it first then use this in the render() method
-onClick={() => this.incrementScore()}
+
+onClick={() => this.incrementScore()} - We do not need to bind it if we use arrow function because the function gets to bind in the component instance by default
 
 
-We do not need to bind it if we use arrow function because the function gets to bind in the component instance
 
-incrementScore() => {   
+incrementScore() => {   //if we write out function using arrow function, we do not even need to worry about the binding in the render() later on
     this.setState({   
       score: this.state.score + 1
     })  
@@ -30,6 +31,8 @@ incrementScore() => {
 
 onClick={this.incrementScore}>
   
+    
+    
 
 //app.js
 class Counter extends React.Component {
@@ -52,10 +55,10 @@ decrementScore = () => {
 render() {
     return (
       <div className="counter">
-        <button className="counter-action decrement" onClick={this.decrementScore}> - </button>
+        <button className="counter-action decrement" onClick={this.decrementScore}> - </button>    /* onClick is specific to React, you must name it onClick */
         <span className="counter-score">{ this.state.score }</span>
-        <button className="counter-action increment" onClick={this.incrementScore}> + </button>
-      </div>                           
+        <button className="counter-action increment" onClick={this.incrementScore}> + </button>    /* onClick is specific to React, you must name it onClick */
+      </div>                                                /* here is to pass a jsx expression */
     );
   }
 }//use onClick because it is a react build-in event, 
