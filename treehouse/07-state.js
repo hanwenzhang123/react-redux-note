@@ -50,5 +50,7 @@ class Counter extends React.Component {
     );
   }
 }
-// we can now delete the previous hardcoded score props passed to Counter and player component in the players list
+// we can now delete the previous hardcoded score props passed to Counter <Counter score={props.score} /> in Player
+// and player component score = {player.score} in the players list in App
 
+   
