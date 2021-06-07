@@ -5,15 +5,16 @@ state is a an object that stores all the data that the component itself needs an
 
 Types of State
 - Application State: main state - sata that is avaiable the entire application
+// class App extends React.Component { }
 - Component State - state that is specific to a component and not shared outside of the component, like a local state
+// class Counter extends React.Component { }
 
 
 
 class App extends React.Component {
-
-  state = {
-    players: [    //set it as an array
-      {
+  state = {   //first set state equals to an object
+    players: [    //set players to an array
+      {   //cut all the object to the players array
         name: "Guil",
         id: 1
       },
@@ -32,16 +33,16 @@ class App extends React.Component {
     ]
   };
 
-  render() {
+  render() {    //render to App
     return (
       <div className="scoreboard">
         <Header 
           title="Scoreboard" 
-          totalPlayers={this.state.players.length} 
+          totalPlayers={this.state.players.length}     //change to this.state
         />
   
         {/* Players list */}
-        {this.state.players.map( player =>
+        {this.state.players.map( player =>    //change to this.state
           <Player 
             name={player.name}
             key={player.id.toString()}            
@@ -57,9 +58,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
   
-  
-//component State
- state that is specific to a componen and not shared outside of the component
- class Counter extends React.Component { }
-
-  
+    
