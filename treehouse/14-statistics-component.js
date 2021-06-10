@@ -38,7 +38,7 @@ import Stats from './Stats';
 const Header = (props) => {
     return (
       <header>
-        <Stats players={props.players}/>  /*left side of the h1, pass the players state*/
+        <Stats players={props.players}/> 
         <h1>{ props.title }</h1>
       </header>
     );
