@@ -8,7 +8,7 @@ using props to communicate with parent like a callback function to the parent
 //Update State Based on a Player's Index
 finish writing the handleScoreChange function by updating state based on the index of a player object.
 
-//sharing state between components
+sharing state between components
 
 //App.js
 import React, { Component } from 'react';
