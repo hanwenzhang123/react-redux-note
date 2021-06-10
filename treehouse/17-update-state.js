@@ -1,10 +1,13 @@
 //recommended way to update
+We're passing in a callback to setState here as opposed to an object. 
+This is the strategy that let's use make sure that we avoid any bugs with state being set asynchronously. 
+The parameter here was named prevState, so we should use that as opposed to directly accessing the state object.
 
 handleAddPlayer = (name) => {
     this.setState( prevState => {   //update based on previously state, make sure this.state always holds the correct updated state
       return{
         players: [
-          ...this.state.players,    //bring the copy of all the players previously existing objects with the new array we are modified
+          ...prevState.players,    //presState - all previous players will the included , bring the copy of all the players previously existing objects with the new array we are modified
           {
             name,   //name: name
             score: 0,
