@@ -11,6 +11,29 @@ npm start
 Then open http://localhost:3000/ to see your app
 
 
+//run react locally
+// install react cli
+npm install -g create-react-app
+
+// create app
+create-react-app my-react-app-name
+
+// go to project folder
+cd my-react-app-name
+
+// install dependencies
+npm install
+
+// start live server
+npm start
+
+
+
+npm run-script start
+npm run start
+npm start
+
+
 
 //CDN Links - https://reactjs.org/docs/add-react-to-a-website.html#add-react-in-one-minute
 
