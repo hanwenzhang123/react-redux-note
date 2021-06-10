@@ -1,5 +1,5 @@
 //Validate Props with PropTypes
-As your app grows, it's a good practice to "type check" or validate the data a component receives from props. 
+As your app grows, it is a good practice to type check or validate the data a component receives from props. 
 PropTypes not only help you catch and avoid bugs, they also serve as a documentation for components. 
 Other developers working on the same project will know exactly which props your components take, and what types they should be
 //not required but useful for debugging
@@ -16,7 +16,7 @@ https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes
 
 //With PropTypes Counter.js
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';   //import PropTypes
 
 const Counter = ({ index, score, changeScore }) => {
   //let index = props.index;    - can be deleted, because we already assigned
@@ -29,27 +29,10 @@ const Counter = ({ index, score, changeScore }) => {
   );
 }
 
-Counter.propTypes = {
+Counter.propTypes = {     //Added here
   index: PropTypes.number,
   score: PropTypes.number,
   changeScore: PropTypes.func
-}
-
-export default Counter;
-
-
-//Without PropTypes Counter.js
-import React from 'react';
-
-const Counter = ({ index, score, changeScore }) => {
-  //let index = props.index;    - can be deleted, because we already assigned
-  return (
-    <div className="counter">
-      <button className="counter-action decrement" onClick={() => changeScore(index, -1)}> - </button>
-      <span className="counter-score">{ score }</span>
-      <button className="counter-action increment" onClick={() => changeScore(index, 1)}> + </button>
-    </div>
-  );
 }
 
 export default Counter;
@@ -72,7 +55,7 @@ const Header = (props) => {
     );
   }
 
-Header.propTypes = {
+Header.propTypes = {    //add here outside of class
     title: PropTypes.string,
     players: PropTypes.arrayOf(PropTypes.object)
   };
@@ -108,7 +91,7 @@ const Stats = (props) => {      //stateless function
     );
 }
 
-Stats.propTypes = {
+Stats.propTypes = {     //add here outside of class
     players: PropTypes.arrayOf(PropTypes.shape({
         score: PropTypes.number
     }))
