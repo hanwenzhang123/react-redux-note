@@ -20,7 +20,7 @@ npm start
 
 
 //Github
-npm install gh-pages --save -dev
+npm install gh-pages --save-dev
 
 //Package.json
 
