@@ -22,6 +22,7 @@ prop drilling
 
 //How Context Works
 Context is mainly used when certain data needs to be accessed by many components at different nesting levels.
+The communication between the Provider and Consumers is what makes context works.
 
 Context API 3 steps
 - createContext()
