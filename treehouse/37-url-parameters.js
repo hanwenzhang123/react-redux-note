@@ -1,5 +1,5 @@
 //Using URL Parameters
-With React Router, you're able to declare dynamic routes using special URL parameters. 
+With React Router, you are able to declare dynamic routes using special URL parameters. 
 The data passed to the URL parameters can be displayed in your app.
 
 Dynamic URL Pattern using /:{name}
