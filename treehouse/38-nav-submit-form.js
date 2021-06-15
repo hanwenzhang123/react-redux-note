@@ -1,7 +1,7 @@
 //Navigating Routes Programmatically
 
 How to navigate users to a URL created by the values they type into a form.
-There may be times when you'll need to programmatically change the path in the URL. 
+There may be times when you will need to programmatically change the path in the URL. 
 A common example is changing the path in response to a form submission. 
 
 
@@ -39,4 +39,4 @@ class Home extends Component {
 
 export default Home;
 
- 
+  
