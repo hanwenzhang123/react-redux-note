@@ -36,6 +36,7 @@ const App = () => (
 export default App;
 
 
+
 //About.js
 import React from 'react';
 
@@ -48,3 +49,27 @@ const About = (props) => (
 
 export default About;
  
+
+
+//Review
+Given this code:
+<Route exact path="/signup" component={SignupForm} />
+Which of the following is true about Route?
+  It renders the SignupForm component only when the URL path is exactly '/signup'.
+
+React Router uses JSX syntax to declare routes.
+True. React Router is a set of components, and the declarative syntax of JSX makes it easier to visualize how routes are structured.
+
+Which component is one of the core components of React Router and keeps your UI in sync with the URL?
+  <BrowserRouter>
+  
+Which React Router component is responsible for rendering UI (or other components)?
+  <Route>
+  
+Which <Route> prop accepts an inline function that gets called when the URL and path match?
+  render
+  
+Which <Route> prop renders a component only when the path matches the URL exactly?
+  exact
+
+  
