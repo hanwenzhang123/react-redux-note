@@ -1,6 +1,6 @@
 One of the biggest changes in React 16 is how React handles JavaScript errors. 
 It provides a built-in solution for handling errors gracefully, with a new lifecycle method called componentDidCatch().
-
+ 
 
 import React, { Component } from 'react';
 import logo from './logo.svg';
