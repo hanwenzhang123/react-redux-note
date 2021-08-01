@@ -2,7 +2,7 @@
 
 import "./ExpenseItem.css";
 
-function ExpressItem(props) {
+function ExpenseItem(props) {
   //create helper variables for the props looks more readable
   const month = props.date.toLocaleString("en-US", { month: "long" });
   const day = props.date.toLocaleString("en-US", { day: "2-digit" });
@@ -23,7 +23,7 @@ function ExpressItem(props) {
   );
 }
 
-export default ExpressItem;
+export default ExpenseItem;
 
 
 //***
@@ -34,7 +34,7 @@ export default ExpressItem;
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 
-function ExpressItem(props) {
+function ExpenseItem(props) {
   return (
     <div className="expense-item">
       <ExpenseDate date={props.date} />
@@ -47,7 +47,7 @@ function ExpressItem(props) {
   );
 }
 
-export default ExpressItem;
+export default ExpenseItem;
 
 
 //ExpenseDate.js
