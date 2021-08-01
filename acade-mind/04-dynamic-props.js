@@ -114,4 +114,9 @@ function ExpressItem(props) {
 }
 
 export default ExpressItem;
+
+//Props is an important concept because it allows you to make your components reusable,
+//and it allows you to pass data from another component to this component
+
+  
    
