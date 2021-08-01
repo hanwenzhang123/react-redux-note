@@ -35,6 +35,12 @@ How React Works?
 Build your own, custom HTML elements
 We build components, react is all about components
 
+You build a componenet tree
+        <App />   - rendered into single HTML page
+      /         \
+<Header />      <Tasks />
+              /     |     \
+        <Task /> <Task /> <Task />
 
 //this is the first file to be execute
 //index.js
