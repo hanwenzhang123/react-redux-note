@@ -28,6 +28,13 @@ React is a single-page application which means only one HTML file
 that is delivered to the browser and hosted by the broswer and rendered by the browser
 we use React to do user interfaces to modify that single page
 
+JSX is JavaScript XML, because HTML is XML in the end 
+JSX is easy to write and will transform to codes that will be running on the browser
+   
+How React Works?
+Build your own, custom HTML elements
+We build components, react is all about components
+
 
 //this is the first file to be execute
 //index.js
@@ -46,7 +53,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 //App.js
 function App() {
-  return (      //JSX below - JS XML, because HTML is XML in the end
+  return (      //JSX below - JS XML, because HTML is XML in the end 
     <div>
       <h2>Let's get started!</h2>
     </div>
@@ -54,5 +61,4 @@ function App() {
 }
 
 export default App;
- 
-   
+          
