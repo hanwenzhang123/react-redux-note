@@ -86,8 +86,8 @@ ReactDOM.render(<App />, document.getElementById('root'));    //we would only re
 
 
 //index.html - only 1 html file
-<div id='root'></div> 
-//targeted by document.getElementById('root'), which will be replaced by <App />
+<div id="root"></div> 
+//targeted by document.getElementById("root"), which will be replaced by <App />
 
 
 //App.js
