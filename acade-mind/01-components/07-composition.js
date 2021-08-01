@@ -42,7 +42,7 @@ function Card(props) {
 }
 
 export default Card;
-//children is the reserved name
+//children is the reserved name - allows you to also create wrapper components
 //the value of children prop will always be the content between the opening and closing tags of your custom component.
 
 //Whenever you combine components, you are using composition.
