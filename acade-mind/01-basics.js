@@ -5,6 +5,7 @@ React is a JavaScfript library for building user interfaces
 React makes building complex, interactive and reactive user interfaces simpler
 React is all about "Components"
 - because all user interfaces in the end are made up of components
+A component in React is just a JavaScript function that returns JSX
 
 What is a "Component"?
 reusable building blocks in your user interface
