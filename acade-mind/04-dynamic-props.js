@@ -99,12 +99,23 @@ export default App;
 //We get key-value pairs in this props object here which passes by React automatically
 //the key you access on your props object has to be the same name you pick for the attribute
 
+//ExpenseItem.js
+
 import "./ExpenseItem.css";
 
 function ExpressItem(props) {
+  //create helper variables for the props looks more readable
+  const month = props.date.toLocaleString("en-US", { month: "long" });
+  const day = props.date.toLocaleString("en-US", { day: "2-digit" });
+  const year = props.date.getFullYear(); //return the 4-digit number year
+
   return (
     <div className="expense-item">
-      <div>{props.date.toISOString()}</div>
+      <div>
+        <div>{month}</div>
+        <div>{year}</div>
+        <div>{day}</div>
+      </div>
       <div className="expense-item__description">
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
