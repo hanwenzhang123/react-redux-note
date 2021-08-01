@@ -44,7 +44,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 //targeted by document.getElementById('root'), which will be replaced by <App />
 
 
-/*App.js*/
+//App.js
 function App() {
   return (      //JSX below - JS XML, because HTML is XML in the end
     <div>
