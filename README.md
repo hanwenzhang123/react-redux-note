@@ -1,8 +1,8 @@
 # Create a New React App
 https://reactjs.org/docs/create-a-new-react-app.html
-> create app
-> go to project folder
-> install dependencies
+> create app\
+> go to project folder\
+> install dependencies\
 > start live server
 ```
 npx create-react-app my-app
@@ -15,11 +15,6 @@ npm start
 ```
 ## app.js 
 - ReactDOM.render(what to show, where to show it);
-- React.createElement()
-React requires 3 element
-1. type element
-2. object element
-3. content/child element
 ``` javascript
 import React from "react";
 import ReactDOM from "react-dom";
