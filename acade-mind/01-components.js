@@ -24,3 +24,31 @@ React allows you to create re-usable and reactive components consisting of HTML 
 Declaretive Approach - using a specific way
 Defind the desired target state(s) and let Reaact figure out the actual JS DOM instructions
   
+React is a single-page application which means only one HTML file 
+that is delivered to the browser and hosted by the broswer and rendered by the browser
+we use React to do user interfaces to modify that single page
+
+//this is the first file to be execute
+//index.js
+import ReactDOM from 'react-dom';
+
+import './index.css';
+import App from './App';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+//index.html - only 1 html file
+<div id="root"></div> 
+//targeted by document.getElementById('root'), which will be replaced by <App />
+
+//App.js
+function App() {
+  return (      //JSX below
+    <div>
+      <h2>Let's get started!</h2>
+    </div>
+  );
+}
+
+export default App;
+ 
