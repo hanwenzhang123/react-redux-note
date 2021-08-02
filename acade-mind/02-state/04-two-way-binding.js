@@ -40,8 +40,8 @@ const ExpenseForm = () => {
   };
 
   //the function when you click the button to submit the form
-  //We can prevent the default of this request being sent and since that request is not sent
-  // the page will now also not reload because we stay on the currently loaded page
+  //we can prevent the default of this request being sent and since that request is not sent
+  //the page will now also not reload because we stay on the currently loaded page
   //without sending any request anywhere and we can continue handling this with JavaScript.
   const submitHandler = (event) => {
     //event for the change event
