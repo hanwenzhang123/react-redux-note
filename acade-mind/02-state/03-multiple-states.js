@@ -20,10 +20,18 @@ const ExpenseForm = () => {
   const titleChangeHandler = (event) => {
     //always update the value
     //setEnteredTitle(event.target.value);
-    setUserInput({
-      ...useInput, //take an object, pull out all key-value pairs and add to the new object
-      enteredTitle: event.target.value, // override this key-value pair only
-    }); //we ensure the other values are not thrown away but are always a part of that new state.
+    // setUserInput({
+    //   ...useInput, //take an object, pull out all key-value pairs and add to the new object
+    //   enteredTitle: event.target.value, // override this key-value pair only
+    // }); //we ensure the other values are not thrown away but are always a part of that new state.
+
+    //whenever you update state and you depend on the previous state: a safer way 
+    //pass in prevState as argument which receive the latest state snapshot for state you called
+    //then change the value of the enteredTitle 
+    setUserInput((prevState) => {
+      return { ...prevState, enteredTitle: event.target.value };
+    });
+
   };
 
   const amountChangeHandler = (event) => {
