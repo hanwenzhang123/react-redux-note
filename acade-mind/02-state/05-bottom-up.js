@@ -1,11 +1,13 @@
 //Child-to-Parent Component Communication (Botttom-up)
 //Parent-to-Child we use props
+//Moving data from a child to a parent component by utilizing props to receive a function from parent component which we call in the child component
 
 //communicate up from child to parent:
 //We can create our own event props, and we can expect functionsas values 
 //and that would allow us to pass a function from a parent component to a child component 
 //and then call that function inside of the child component.
 //and when we then call a function, we can of course pass data to that function as a parameter 
+
 
 //ExpenseForm.js
 import React, { useState } from "react";
