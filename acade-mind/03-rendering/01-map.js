@@ -8,6 +8,8 @@ map() creates a new array based on another array and transform every element in 
 map() takes a function as argument, and that function executes for every element in the array
 and it gets that element for which it is currently executing as a parameter.
 
+
+//Expenses.js
 import React, { useState } from "react";
 
 import ExpenseItem from "./ExpenseItem";
@@ -28,8 +30,9 @@ const Expenses = (props) => {
           selected={filteredYear}
           onChangeFiler={filterChangeHandler}
         />
-        {props.items.map((expense) => (
+        {props.items.map((expense) => ( {/* you can use  (expense, index) but may face bugs */}
           <ExpenseItem
+            key={expense.id}  {/* add a key to help react identify the an individual item, need to set an unique value for each item */}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
@@ -71,8 +74,7 @@ import React, { useState } from "react";
 import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
-const DUMMY_EXPENSES = [
-  //initial expenses
+const DUMMY_EXPENSES = [    //initial expenses
   {
     id: "e1",
     title: "Toilet Paper",
