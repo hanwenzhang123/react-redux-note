@@ -100,7 +100,7 @@ const NewExpense = (props) => {
       ...enteredExpenseData, //pull out all the expenseData key-value pairs from ExpenseForm to this new object
       id: Math.random().toString(), //new ID
     };
-    props.onAddExpense(expenseData); //will forward the enriched expenseDate
+    props.onAddExpense(expenseData); //will forward the enriched expenseDate to App.js
   };
 
   return (
@@ -145,7 +145,7 @@ const App = () => {
   ];
 
   const addExpenseHandler = (expense) => {
-    //pass the expense
+    //pass the expense from the child
     console.log("In App.js");
     console.log(expense); //log the single expense
   };
