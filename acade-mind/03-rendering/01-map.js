@@ -1,6 +1,8 @@
 Rendering lists & Conditional Content
 working with really dynamic content
-- how we can output arrays of data on our page 
+- outputting dynamic lists of content
+- rendering content under certain conditions
+how we can output arrays of data on our page 
 and how we can show different content based on different conditions
 
 //Rendering Lists of Data
