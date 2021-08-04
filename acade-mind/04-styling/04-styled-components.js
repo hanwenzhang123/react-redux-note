@@ -11,7 +11,7 @@ import styled from "styled-components"; //import the package
 //``is called tagged template literal, a default js feature, which will be executed as a method behind the scene
 //button is a method from package, then using `` for passing the method to the button
 //styled.button``will provide a button, can be h1 p or other html tags
-//& for pseudo selectors
+//& always refers back to the component which being created, like you can use for pseudo selectors or nested classes
 
 const Button = styled.button`
   font: inherit;
