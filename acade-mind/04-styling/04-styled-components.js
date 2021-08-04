@@ -21,6 +21,12 @@ const Button = styled.button`
   background: #8b005d;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
   cursor: pointer;
+  
+  @media (min-width: 768px) {
+    /* media queries - now you just put the styles into that media query
+    which should affect this element when that condition here is met.*/
+    width: auto;
+  }
 
   &:focus {
     outline: none;
