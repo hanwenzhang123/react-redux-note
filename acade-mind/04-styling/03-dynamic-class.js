@@ -29,6 +29,7 @@ const CourseInput = (props) => {
   return (
     //dynamically add or remove classes instead of just hard code the string value className="form-control invalid"
     //using {} for JS code, template literal `` with ${} dynamic value, can be any JS expression
+    //you can then add more dynamically added classes by using ${} 
     <form onSubmit={formSubmitHandler}>
       <div className={`form-control ${!isValid ? "invalid" : ""}`}>
         <label>Course Goal</label>
