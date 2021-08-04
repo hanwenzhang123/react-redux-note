@@ -138,7 +138,7 @@ const CourseInput = props => {
   const formSubmitHandler = event => {
     event.preventDefault();           //prevent default when submit forms
     props.onAddGoal(enteredValue);    //onAddGoal goes to the function in App.js {addGoalHandler}
-    setEnteredValue(" "); //reset input after submitting the goal, add a two way binding below value={enteredValue}
+    setEnteredValue(" "); //reset input after submitting the goal, upadte to empty string, add a two way binding below value={enteredValue}
   };
 
   return (
@@ -147,7 +147,7 @@ const CourseInput = props => {
         <label>Course Goal</label>
         <input type="text" 
          onChange={goalInputChangeHandler}    {/* onChange for once the value changes */}
-         value={enteredValue} />    {/* Two way binding for resetting the input value after submitting the form */}
+         value={enteredValue} />    {/* Two way binding for resetting the input value after submitting the form, already updated to empty string*/}
       </div>
       <Button type="submit">Add Goal</Button>
     </form>
