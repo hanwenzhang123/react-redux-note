@@ -24,6 +24,7 @@ const CourseInput = (props) => {
       return;
     }
     props.onAddGoal(enteredValue);
+    setEnteredValue(" "); 
   };
 
   return (
@@ -35,6 +36,7 @@ const CourseInput = (props) => {
           style={{ borderColor: !isValid ? "salmon" : "transparent" }}
           type="text"
           onChange={goalInputChangeHandler}
+          value={enteredValue}
         />
       </div>
       <Button type="submit">Add Goal</Button>
