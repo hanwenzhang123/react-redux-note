@@ -132,19 +132,19 @@ const CourseInput = props => {
   const [enteredValue, setEnteredValue] = useState('');
 
   const goalInputChangeHandler = event => {
-    setEnteredValue(event.target.value);
+    setEnteredValue(event.target.value);    //updating the input change
   };
 
   const formSubmitHandler = event => {
-    event.preventDefault();
-    props.onAddGoal(enteredValue);
+    event.preventDefault();           //prevent default when submit forms
+    props.onAddGoal(enteredValue);    //onAddGoal goes to the function in App.js {addGoalHandler}
   };
 
   return (
     <form onSubmit={formSubmitHandler}>
       <div className="form-control">
         <label>Course Goal</label>
-        <input type="text" onChange={goalInputChangeHandler} />
+        <input type="text" onChange={goalInputChangeHandler} />   {/* onChange for once the value changes */}
       </div>
       <Button type="submit">Add Goal</Button>
     </form>
