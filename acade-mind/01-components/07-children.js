@@ -39,6 +39,7 @@ function Card(props) {
   const classes = 'card ' + props.className;  //card as the default class that always applied
                        //props.className - anything received as a class name from outside is added to that string
   return <div className={classes}>{props.children}</div>;
+  //props.children will return everything in between a component’s opening and closing JSX tags.
 }
 
 export default Card;
