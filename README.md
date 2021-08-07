@@ -13,6 +13,18 @@ npm start
 npm install
 npm start
 ```
+# Deploying a React App on GitHub
+```$ npm install gh-pages --save-dev```
+"http://{username}.github.io/{repo-name}"
+```
+"homepage": "http://hanwenzhang123.github.io/my-app"
+
+"scripts": {
+  //...
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
+```
 ## app.js 
 - ReactDOM.render(what to show, where to show it);
 ``` javascript
