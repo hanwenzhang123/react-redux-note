@@ -44,3 +44,7 @@ const [counter, setCounter] = useState(1);
 setCounter(counter + 1);
 If you update state that depends on the previous state, you should use the "function form" of the state updating function instead. 
  
+A stateful component class stores information as state.
+A stateless component class displays that state.
+A different stateless component class displays a way to change that state.
+  
