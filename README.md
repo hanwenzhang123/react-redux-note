@@ -51,7 +51,7 @@ function App() {
 export default App;
 ```
 ## index.html
-Everything will insert to <div id="root"></div>
+Everything will insert to the div
 ```html
 <!DOCTYPE html>
 <html lang="en">
