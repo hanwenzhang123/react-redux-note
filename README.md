@@ -16,7 +16,7 @@ npm start
 # Deploying a React App on GitHub
 ```$ npm install gh-pages --save-dev```
 "http://{username}.github.io/{repo-name}"
-```
+```json
 "homepage": "http://hanwenzhang123.github.io/my-app"
 
 "scripts": {
@@ -25,8 +25,9 @@ npm start
   "deploy": "gh-pages -d build"
 }
 ```
-## app.js 
-- ReactDOM.render(what to show, where to show it);
+# React Boilplate
+## index.js 
+ReactDOM.render(what to show, where to show it);
 ``` javascript
 import React from "react";
 import ReactDOM from "react-dom";
@@ -34,7 +35,8 @@ import App from "./components/App";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 ```
-## App.jsx
+## App.js
+A jsx file, js is good
 ``` javascript
 import React from "react"; 
 
@@ -49,6 +51,7 @@ function App() {
 export default App;
 ```
 ## index.html
+Everything will insert to <div id="root"></div>
 ```html
 <!DOCTYPE html>
 <html lang="en">
