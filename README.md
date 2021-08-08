@@ -16,7 +16,7 @@ npm start
 # Deploying a React App on GitHub
 ```npm install gh-pages --save-dev```\
 ```"http://{username}.github.io/{repo-name}"```\
-```npm run deploy```\
+```npm run deploy```
 ```json
 "homepage": "http://hanwenzhang123.github.io/my-app"
 
