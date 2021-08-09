@@ -3,7 +3,7 @@ getting access to elements
 they allow us to get access to other DOM elements and work with them.
 with refs, we can set up a connection between a HTML element which is being rendered in the end and our other JavaScript code.
 
-//Original Purpose - code at below:
+//Original Purpose - see code below:
 //We simply have our state and with every keystroke, we update our state.
 // With every keystroke, we update the value we get
 // by the user and we store it in our state
