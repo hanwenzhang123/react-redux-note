@@ -1,7 +1,0 @@
-Advanced: handling side effects, using reducers, using context API
-- working with (side) effects
-- managing more complex state with reducers
-- managing App-Wide or Component Wide state with context
-
-What is an "Effect" or a "Side Effect"?
-Main Job: render UI & React to User Input
