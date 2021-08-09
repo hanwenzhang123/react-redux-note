@@ -15,6 +15,9 @@ It could be the email address being updated.
 It could be anything, whenever you have an action that should be executed in response to some other action,
 that is a side effect and that is where a useEffect is able to help you.
 
+//What to add as Dependencies
+You must add all "things" you use in your effect function if those "things" could change because your component (or some parent component) re-rendered. 
+
 
 //Login.js
 import React, { useState, useEffect } from "react";
