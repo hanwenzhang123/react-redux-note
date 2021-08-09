@@ -44,7 +44,11 @@ but to still render this differently, render the modal HTML content somewhere el
 
 
 //Implementation
-//index.html
+Portals need two things.
+You need a place you wanna port the Component to
+and then you need to let the Component know that it should have a portal to that place.
+
+//index.html - mark that place
 In the HTML we add:
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -55,7 +59,7 @@ In the HTML we add:
 
 //ErrorModal.js
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';   //import
 
 import Card from './Card';
 import Button from './Button';
@@ -84,9 +88,9 @@ const ModalOverlay = (props) => {
 const ErrorModal = (props) => {
   return (
     <React.Fragment>
-      {ReactDOM.createPortal(
-        <Backdrop onConfirm={props.onConfirm} />,
-        document.getElementById('backdrop-root')
+      {ReactDOM.createPortal(                       //JSX expression
+        <Backdrop onConfirm={props.onConfirm} />,   //component
+        document.getElementById('backdrop-root')    //pointer, to where
       )}
       {ReactDOM.createPortal(
         <ModalOverlay
