@@ -25,8 +25,26 @@ It is a bit like styling a <div> like a <button> and adding an event listener to
 //it will work but not a goood practice
 <div onClick={clickHandler}>click me, it is a bad button</div>
 
+
 //portal
-//we can use portal to keep writing our components the way we want
-//but to still render this differently, render the modal HTML content somewhere else than it would normally go to.
+we can use portal to keep writing our components the way we want
+but to still render this differently, render the modal HTML content somewhere else than it would normally go to.
+
+//real DOM
+<div class="my-modal">
+  <h2>A Modal Title!</h2>
+</div>
+<Section>
+  <h2>Some Other Content</h2>
+  <form>
+      <label>Username</label>
+      <input type="text" />
+  </form>
+</Section>
 
 
+//Implementation
+In the HTML we add
+
+
+//ErrorModal.js
