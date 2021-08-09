@@ -105,3 +105,13 @@ const ErrorModal = (props) => {
 };
 
 export default ErrorModal;
+
+
+we can communicate with it as we did before,
+we can use it as if it would be rendered here, it just isn't.
+React DOM createPortal can be used anywhere where you would otherwise use JSX code.
+
+wherever you would normally just use the Component, you can use createPortal to portal,
+to move that Component HTML content somewhere else, only in the actual DOM that is being rendered.
+In JSX, in your Components,you continue working with those Components as you did before.
+  
