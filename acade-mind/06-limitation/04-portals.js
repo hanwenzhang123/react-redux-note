@@ -44,8 +44,14 @@ but to still render this differently, render the modal HTML content somewhere el
 
 
 //Implementation
-In the HTML we add
-
+//index.html
+In the HTML we add:
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="backdrop-root"></div>
+    <div id="overlay-root"></div>
+    <div id="root"></div>
+   </body>
 
 //ErrorModal.js
 import React from 'react';
