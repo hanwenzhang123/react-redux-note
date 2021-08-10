@@ -16,7 +16,7 @@ initFn - A function to set the initial state programtically
 useState() vs useReducer()
 generally, you know when you need useReducer() - when using useState becomes crumbersome or you are getting a lot of bugs/unintended behaviours
 useState()
-- the main state management "tool"
+- the main state management tool
 - great for independent pieces of state/data
 - great if state updates are easy and limited to a few kinds of updates
 useReducer()
