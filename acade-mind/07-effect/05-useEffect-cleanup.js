@@ -31,7 +31,7 @@ const Login = (props) => {
       setFormIsValid(
         enteredEmail.includes("@") && enteredPassword.trim().length > 6
       );
-    }, 500); //wait 500 milliseconds to check the form validation
+    }, 500); //wait 500 milliseconds to check the form validation when the keystroke stops typing
 
     return () => { //return has to be function itself, it is a clean up function
       clearTimeout(identifier); //we clear the last timer before we set a new one.
