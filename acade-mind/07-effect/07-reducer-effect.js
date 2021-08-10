@@ -1,3 +1,25 @@
+//Adding Nested Properties As Dependencies To useEffect
+Use object destructuring to add object properties as dependencies to useEffect(), which is a very common pattern and approach
+The key thing is NOT that we use destructuring but that we pass specific properties instead of the entire object as a dependency.
+
+ const { someProperty } = someObject;
+useEffect(() => {
+  // code that only uses someProperty ...
+}, [someProperty]);
+
+We could also write this code and it would work in the same way.
+useEffect(() => {
+  // code that only uses someProperty ...
+}, [someObject.someProperty]);
+
+But you should avoid this code:
+useEffect(() => {
+  // code that only uses someProperty ...
+}, [someObject]);
+Because now the effect function would re-run whenever ANY property of someObject changes 
+  - not just the one property (someProperty in the above example) our effect might depend on.
+  
+
 //Login.js
 import React, { useState, useEffect, useReducer } from "react";
 
