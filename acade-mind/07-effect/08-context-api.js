@@ -43,7 +43,7 @@ export default AuthContext;
 
 
 //Listening
-We can listen by using Auth-Context consumer or by using a React Hook
+We can listen by using Auth-Context consumer or by using a React useContext Hook
 
 //Example - AuthContext.Consumer
 <AuthContext.Consumer> takes a function
@@ -109,3 +109,40 @@ const Navigation = (props) => {
 };
 
 export default Navigation;
+
+
+//Example - React useContext Hook
+//Navigation.js
+import React, { useContext } from "react";
+import AuthContext from "../../store/auth-context";
+
+import classes from "./Navigation.module.css";
+
+const Navigation = (props) => {
+  const ctx = useContext(AuthContext); //what you get back is the context value
+
+  return (
+    <nav className={classes.nav}>
+      <ul>
+        {ctx.isLoggedIn && (
+          <li>
+            <a href="/">Users</a>
+          </li>
+        )}
+        {ctx.isLoggedIn && (
+          <li>
+            <a href="/">Admin</a>
+          </li>
+        )}
+        {ctx.isLoggedIn && (
+          <li>
+            <button onClick={props.onLogout}>Logout</button>
+          </li>
+        )}
+      </ul>
+    </nav>
+  );
+};
+
+export default Navigation;
+  
