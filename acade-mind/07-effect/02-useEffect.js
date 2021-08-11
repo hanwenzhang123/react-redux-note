@@ -47,6 +47,7 @@ function App() {
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
 
     if (storedUserLoggedInInformation === "1") {
+      localStorage.removeItem("isLoggedIn");  //local storage
       setIsLoggedIn(true);
     }
   }, []); //here we have no dependencies so no changes, only run the function once the app restart
