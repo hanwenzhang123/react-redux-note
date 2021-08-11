@@ -3,9 +3,16 @@ when there is no direct connections, how components communicate through each oth
 Original - use props  and functions passed via props
 React Context - trigger an action in Component-wide "behind the scenes" state storage
                 directly pass to the component that is interested without building such a long prop chain. 
+                
+//Context Limitation
+- React Context is NOT optimized for high frequency changes! - solution: Redux
+  no good if you have state changes every second or multiple times per second
+  authentication okay because it changes once every few minutes or longer
+- React Context also should not be used to replace ALL component communications and props
+  component should still be configurable via props and short "prop chains" might not need any replacement
+  
 
 //create a new folder named store and a new file named auth-context.js
-                
 //auth-context.js
 import React from "react";
 
