@@ -16,7 +16,6 @@ npm start
 # Deploying a React App on GitHub
 ```
 npm install gh-pages --save-dev
-npm run deploy
 ```
 ```json
 "http://{username}.github.io/{repo-name}"
@@ -28,6 +27,9 @@ npm run deploy
   "predeploy": "npm run build",
   "deploy": "gh-pages -d build"
 }
+```
+```
+npm run deploy
 ```
 # React Boilplate
 ## index.js 
