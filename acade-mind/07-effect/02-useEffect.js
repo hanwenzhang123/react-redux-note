@@ -47,13 +47,13 @@ function App() {
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
 
     if (storedUserLoggedInInformation === "1") {
-      localStorage.removeItem("isLoggedIn");  //local storage
+      localStorage.removeItem("isLoggedIn");  //clear data from local storage
       setIsLoggedIn(true);
     }
   }, []); //here we have no dependencies so no changes, only run the function once the app restart
 
   const loginHandler = (email, password) => {
-    localStorage.setItem("isLoggedIn", "1"); //store the data
+    localStorage.setItem("isLoggedIn", "1"); //set/store the data at the local storage
     setIsLoggedIn(true);
   };
 
