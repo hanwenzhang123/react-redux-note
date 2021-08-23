@@ -21,7 +21,7 @@ class UserFinder extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.searchTerm !== this.state.searchTerm) {
+    if (prevState.searchTerm !== this.state.searchTerm) {   //check if the search term changes
       this.setState({
         filteredUsers: this.context.users.filter((user) =>
           user.name.includes(this.state.searchTerm)
@@ -54,7 +54,7 @@ class UserFinder extends Component {
 //     setFilteredUsers(
 //       DUMMY_USERS.filter((user) => user.name.includes(searchTerm))
 //     );
-//   }, [searchTerm]);
+//   }, [searchTerm]);    //here we check if the searchTerm changes when we use useEffect, we put it in the dependency
 
 //   const searchChangeHandler = (event) => {
 //     setSearchTerm(event.target.value);
