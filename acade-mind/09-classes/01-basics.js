@@ -20,3 +20,7 @@ class Product extends Component {
 }
 //components can also be defined as JS classes where a render() method defines the to-be-rendered output
  
+Prior to React 16.8, you have to use class-based components to manage "state"
+React 16.8 introduced react "hooks" for functional components
+Class-based components can not use React Hooks!!!
+   
