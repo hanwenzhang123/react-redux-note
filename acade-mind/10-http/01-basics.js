@@ -5,7 +5,7 @@
 
 //How to (not) connect to a database
 browser-side apps do not directly talk to databases
-React App -X- Database (SQL, NoSQL) - Backend App (NodeJS App, PHP App)
+React App -X- Database (SQL, NoSQL) - Backend App (NodeJS App, PHP App) - React App
 Database credential would be exposed in the broswer performance issues
 
 React is able to talk to a backend but not to a database directly for a security and performance reasons.
