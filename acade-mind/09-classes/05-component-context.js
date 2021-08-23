@@ -71,3 +71,14 @@ class UserFinder extends Component {
 // };
 
 export default UserFinder;
+
+
+//UsersContext.js
+import React from 'react';
+
+const UsersContext = React.createContext({
+  users: []
+});
+
+export default UsersContext;
+  
