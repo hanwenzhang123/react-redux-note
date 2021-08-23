@@ -21,8 +21,8 @@ function App() {
 
   //we know it never changes, then useCallback to store it, so here setShowParagraph function will never change
   const toggleParagraphHandler = useCallback(() => {
-    if (allowToggle) {
-      setShowParagraph((prevShowParagraph) => !prevShowParagraph);
+    if (allowToggle) {  
+      setShowParagraph((prevShowParagraph) => !prevShowParagraph);  //State Updates & Scheduling (ensure the latest)
     }
   }, [allowToggle]); //dependencies are like useEffect
   //always use the latest allowToggle
