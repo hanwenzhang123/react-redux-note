@@ -47,3 +47,9 @@ previous evalution result vs current evaluation result
 then React would determine the different between the snapshsots and report the changes to the real DOM
 changes are required and the rest should stay unchanged
   
+
+//Components & States
+components and their interaction with state management is a core aspect of React.
+by using the useState Hook, and that is how this interaction between components and state is handled.
+
+  
