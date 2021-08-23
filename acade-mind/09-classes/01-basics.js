@@ -23,4 +23,12 @@ class Product extends Component {
 Prior to React 16.8, you have to use class-based components to manage "state"
 React 16.8 introduced react "hooks" for functional components
 Class-based components can not use React Hooks!!!
-   
+  
+  
+//class-based vs functional components
+  prefer functional components
+  use class-based if
+    - you prefer them
+    - you are working on an existing project or in a team where they are getting used
+    - you build an "error boundary"
+ 
