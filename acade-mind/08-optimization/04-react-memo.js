@@ -1,3 +1,4 @@
+Preventing unnecesarry re-evaluations with React.memo()
 Only for functional component, not for class based components
 
 //React.memo()
