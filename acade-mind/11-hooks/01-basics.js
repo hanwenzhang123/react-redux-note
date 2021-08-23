@@ -17,5 +17,6 @@ extra unofficial rule for useEffect(): always add everything you refer to inside
 //What are custom hooks?
 Outsource stateful logic into re-usable functions
 You can build custom hooks, these custom hook functions to outsource stateful logic into reusable functions.
+custom hooks can use other React hooks, including other custom hooks.
 
-
+Unlike "regular function", custom hooks can use other React hooks and React state
