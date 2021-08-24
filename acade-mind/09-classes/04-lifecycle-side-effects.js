@@ -1,6 +1,7 @@
 Class-based component lifecycle
 - side effects in functional components: useEffect()
 - class-based components can not use react hooks
+Mounting means putting elements into the DOM.
 
 componentDidMount() - called once component mounted (was evaluated and rendered) - useEffect(...,[])
 componentDidUpdate() - called once component updated (was evaluated and rendered) - useEffect(..., [someValue])
