@@ -8,6 +8,7 @@ componentWillUnmount() - called right before component is unmounted (removed fro
 
 
 //example
+//Users.js
 import { Fragment, useState, useEffect, Component } from 'react'; //import component
 
 import Users from './Users';
@@ -28,7 +29,7 @@ class UserFinder extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount() {   //only run once when the page loads, after it will be componentDidUpdate
     // Send http request...
     this.setState({ filteredUsers: DUMMY_USERS });
   }
@@ -84,3 +85,25 @@ class UserFinder extends Component {
 // };
 
 export default UserFinder;
+
+
+//User.js
+import { Component } from 'react';
+
+import classes from './User.module.css';
+
+class User extends Component {
+  componentWillUnmount() {    //will be print 3 times because we have 3 users
+    console.log('User will unmount!');
+  }
+
+  render() {
+    return <li className={classes.user}>{this.props.name}</li>;
+  } 
+}
+
+// const User = (props) => {
+//   return <li className={classes.user}>{props.name}</li>;
+// };
+
+export default User;
