@@ -8,6 +8,16 @@ componentDidUpdate() - called once component updated (was evaluated and rendered
 componentWillUnmount() - called right before component is unmounted (removed from DOM) - useEffect(() => {return () => {...}}, [])
 
 
+//Lifecycle of Components
+Each component in React has a lifecycle which you can monitor and manipulate during its three main phases.
+The three phases are: Mounting, Updating, and Unmounting.
+
+Mounting: Mounting means putting elements into the DOM.
+The componentDidMount() method is called after the component is rendered.
+The componentDidUpdate method is called after the component is updated in the DOM.
+The componentWillUnmount method is called when the component is about to be removed from the DOM.
+
+
 //example
 //UserFinder.js
 import { Fragment, useState, useEffect, Component } from 'react'; //import component
