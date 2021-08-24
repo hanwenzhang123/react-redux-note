@@ -9,7 +9,7 @@ componentWillUnmount() - called right before component is unmounted (removed fro
 
 
 //example
-//Users.js
+//UserFinder.js
 import { Fragment, useState, useEffect, Component } from 'react'; //import component
 
 import Users from './Users';
