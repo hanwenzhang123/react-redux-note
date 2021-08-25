@@ -1,6 +1,3 @@
-//components
-react is component based, we are building components that each only care about one thing
-
 //breaking into components
 state is always something that changes because user interaction
 state usually lives in one location or a specific state only one location, it trickles down as props
@@ -26,5 +23,8 @@ componentDidMount - puts our components on the page, it renders onto the DOM for
 
 
 
-
- 
+//Quiz
+We want to create a new component in React that does not need any local state management or access to lifecycle methods in the component. 
+What kind of component should we make?
+Functional components are the best type of component to render if you do not need access to state or lifecycle methods! 
+It has benefits of being easy to test, easier to read, and easier to write!
