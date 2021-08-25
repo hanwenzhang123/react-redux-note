@@ -21,6 +21,8 @@ class App extends Component {
       monsters: [],   //initially state empty
       searchField: ''
     };
+    
+ // this.handleChange = this.handleChange.bind(this);   //we have to bind the function if we use regular function for the handleChange function
   }
 
   componentDidMount() {   //puts our components on the page, it renders onto the DOM for the first time.
@@ -29,7 +31,7 @@ class App extends Component {
       .then(users => this.setState({ monsters: users })); //setState to set data
   }
 
-  onSearchChange = event => {   //arrow function allows you to set this when it defines in first place, so we do not need to bind as the regular function
+  onSearchChange = event => {   //arrow function binds "this" context to the place where it was defined in the first place because of lexical scoping
     this.setState({ searchField: event.target.value });   //setState is not happening immediately because it is async call
   };
 
