@@ -56,7 +56,7 @@ handleClick = () => {
 //lifecycle methods
 https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 lifecycle methods are essentially methods that get automatically called at different stages of when this component gets rendered.
-lifecycle has three phrases: mounting, updating, unmounting
+lifecycle has three phases: mounting, updating, unmounting
 
 //Mounting 
 - The mounting phase is the phase when the component is being put on the dome for the first time.
@@ -64,14 +64,27 @@ lifecycle has three phrases: mounting, updating, unmounting
 - then call the render method to know what the component looks like
 - React updates DOM and refs
 componentDidMount - put our components on the page, it is mounting and rendering onto the DOM for the first time.
+shouldComponentUpdate - determine whether or not the whole chain needs to happen
+//constructor!
+//render!
+//componentDidMount!
 
 //Updating 
-- render - new props, setSate(), forceUpdate()
-- React updates DOM and refs
-componentDidUpdate - 
+no needs to re-mount, it is already mounted, we re-render, goes to the update phase, selectively change the HTML
+- render - new props, setSate(), forceUpdate() - (triggers the updating phase happen)
+- React updates DOM and refs - (update the DOM)
+componentDidUpdate - called after the update done.
+//shouldComponentUpdate!
+//render!
+//componentDidUpdate!
 
 //Unmounting
-componentWillUnmount - will get called during this phrase
+- If there is anything regarding our component that might need some tidying up.
+- And this usually has to do with if we want to remove anything that might be a memory leak
+- which just means that there is some leftover code that the computer does not need to be aware of
+- that the garbage collection can not access, which just uses up excess memory inside of our browser that it does not need to.
+componentWillUnmount - no longer mounting, call componentWillUnmountt in case there is anything it needs to do before I remove it from the DOM.
+//componentWillUnmount!    - will be the last thing during the lifecycle
 
 
 //lifecycles.component.jsx 
@@ -80,28 +93,28 @@ import React from 'react';
 class Lifecycles extends React.Component {
   constructor() {
     super();
-    console.log('constructor!');    //1
+    console.log('constructor!'); 
   }
 
-  componentDidMount() {   //base state
-    console.log('componentDidMount!');    //3
+  componentDidMount() {   //base state, first time render
+    console.log('componentDidMount!');
   }
 
   componentDidUpdate() {
-    console.log('componentDidUpdate!');
+    console.log('componentDidUpdate!'); 
   }
 
   componentWillUnmount() {
     console.log('componentWillUnmount!');
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate(nextProps, nextState) {   //determine whether or not the whole chain needs to happen
     console.log('shouldComponentUpdate!', nextProps);
-    return nextProps.text !== this.props.text;
+    return nextProps.text !== this.props.text;    //for performance, if texts are different, then we update; otherwise, no updates
   }
 
   render() {
-    console.log('render!');   //2
+    console.log('render!'); 
     return (
       <div className='lifecycles'>
         <h3>LIFECYCLES COMPONENT</h3>
