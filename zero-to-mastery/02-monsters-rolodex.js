@@ -9,10 +9,8 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 //App.js 
 import React, { Component } from 'react';
-
 import { CardList } from './components/card-list/card-list.component';
 import { SearchBox } from './components/search-box/search-box.component';
-
 import './App.css';
 
 class App extends Component {
@@ -65,6 +63,8 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
+
+//components
 //card-list.component.jsx 
 import React from 'react';
 import { Card } from '../card/card.component';
@@ -79,7 +79,6 @@ export const CardList = props => (
 );
 
 
-//components
 //card.component.jsx
 import React from 'react';
 import './card.styles.css';
@@ -95,6 +94,7 @@ export const Card = props => (
   </div>
 );
   
+  
 //search-box.component.jsx
 import React from 'react';
 import './search-box.styles.css';
@@ -106,3 +106,4 @@ export const SearchBox = props => (
     placeholder='search monsters'
     onChange={props.onSearchChange}
   />
+  
