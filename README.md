@@ -31,7 +31,7 @@ npm install gh-pages --save-dev
 ```
 npm run deploy
 ```
-# React Boilplate
+# Functional React Boilerplate
 ## index.js 
 ReactDOM.render(what to show, where to show it);
 ``` javascript
