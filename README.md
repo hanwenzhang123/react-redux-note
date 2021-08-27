@@ -81,6 +81,27 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+# Class-based Component
+```javascript
+import React, { Component } from "react";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>Hello World</h1>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
 # Documentations
 [React Doc](https://reactjs.org/docs/hello-world.html)\
 [React Tutorial](https://reactjs.org/tutorial/tutorial.html)\
