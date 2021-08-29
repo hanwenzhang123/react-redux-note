@@ -13,12 +13,12 @@ React is able to talk to a backend but not to a database directly for a security
 
 //Backend API 
 //API - Application Programming Interface - rules to do certain tasks
-use the fetch API or a third-party libraries to perform the request
-get the response, analyze the response and maybe throw and generate an error if it's needed
+use the fetch API or a third-party libraries to perform the request,
+get the response, analyze the response and maybe throw and generate an error if it is needed,
 or work with the data you get back as part of the response.
-You can send both get and post requests
+You can send both get and post requests,
 you can handle different States which are involved with sending requests.
-A loading and an error State
+A loading and an error State.
  
 
 //Initial Code
