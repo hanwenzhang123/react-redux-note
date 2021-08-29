@@ -18,7 +18,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);   //handle error, initally null, we have no errors
 
-  const fetchMoviesHandler = async () => {
+  async function fetchMoviesHandler() {
     setIsLoading(true);
     setError(null);
     try {
