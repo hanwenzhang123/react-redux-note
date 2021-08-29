@@ -5,7 +5,6 @@ if we use fetch .then(), we use .catch() to catch the error
 fetch API has a ok field in the response we get
 the response also has a status field which holds the concrete response status code
 
-//using useEffect() for Requests
 
 //App.js
 import React, { useState, useEffect, useCallback } from 'react';
