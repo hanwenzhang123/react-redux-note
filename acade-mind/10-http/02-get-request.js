@@ -29,7 +29,7 @@ function App() {
       });
   }
   
-  //async await way getting response
+  //async await way getting response - same as above
     async function fetchMoviesHandler() {
     const response = await fetch('https://swapi.dev/api/films/');
     const data = await response.json();
