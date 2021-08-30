@@ -20,3 +20,10 @@ You can build custom hooks, these custom hook functions to outsource stateful lo
 custom hooks can use other React hooks, including other custom hooks.
 
 Unlike "regular function", custom hooks can use other React hooks and React state
+
+//Creating a Custom React Hook Function
+create a new folder side-by-side to the components called hooks
+create a file named like use-counter.js
+always start with use in the function name and you can name whatever you want after it
+const useCounter = () = {};
+  
