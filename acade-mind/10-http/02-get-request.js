@@ -1,3 +1,4 @@
+//Sending a GET request
 Axios - sending HTTP request - https://github.com/axios/axios
 Fetch API - build in methods in JavaScript
 
