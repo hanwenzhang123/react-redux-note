@@ -13,9 +13,9 @@ const useHttp = (requestConfig, applyData) => {   //must start with use, pass in
     setError(null);
     try {
       const response = await fetch(requestConfig.url, {   //the requestConfig is passed in with dynamic url 
-        method: requestConfig.method,
-        headers: requestConfig.headers,
-        body: JSON.stringify(requestConfig.body),   //json transformation
+        method: requestConfig.method ? requestConfig.method : 'GET',    //check with a default value
+        headers: requestConfig.headers ? requestConfig.headers : {},
+        body: requestConfig.body ? JSON.stringify(requestConfig.body) : null,  //json transformation
       });
 
       if (!response.ok) {
