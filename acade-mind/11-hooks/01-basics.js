@@ -27,3 +27,7 @@ create a file named like use-counter.js
 always start with use in the function name and you can name whatever you want after it
 const useCounter = () = {};
   
+you are going to use a custom hook just as you use to build in hooks.
+You are just calling it like a function because it is just a function.
+
+  
