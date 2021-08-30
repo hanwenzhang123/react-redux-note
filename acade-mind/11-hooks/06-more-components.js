@@ -25,7 +25,7 @@ const NewTask = (props) => {
         },
         body: { text: taskText },
       },
-      createTask.bind(null, taskText)
+      createTask.bind(null, taskText) //bind allows us to pre-configure a function
     );
   };
 
