@@ -6,6 +6,13 @@ const SimpleInput = (props) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredNameIsValid, setEnteredNameIsValid] = useState(true);   //provide validation feedback
                                             //set initial value true, so we do not see the validation feedback at the beginning
+  const [enteredNameTouched, setEnteredNameTouched] = useState(false);
+  
+  useEffect(() => {
+    if (enteredNameIsValid) {
+      console.log('Name Input is valid!');
+    }
+  }, [enteredNameIsValid]);
 
   const nameInputChangeHandler = (event) => {
     setEnteredName(event.target.value);
@@ -20,18 +27,20 @@ const SimpleInput = (props) => {
     }
     
     setEnteredNameIsValid(true);    //pass the previous if check, then set the validation to true
-    
     console.log(enteredName);
     
     const enteredValue = nameInputRef.current.value; 
-    
     console.log(enteredValue);
     
     setEnteredName("");    //reset the enetered iput
   };
   
-  const nameInputClasses = enteredNameIsValid ? "form-control" : "form-control invalid";    //set the class name dynamic based on the validation
-  
+  const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
+
+  const nameInputClasses = nameInputIsInvalid   //set the class name dynamic based on the validation
+    ? 'form-control invalid'
+    : 'form-control';
+
   return (
     <form onSubmit={formSubmissionHandler}>
       <div className={nameInputClass}>  //dynamic class
@@ -43,7 +52,9 @@ const SimpleInput = (props) => {
           onChange={nameInputChangeHandler} 
           value = {enteredName}     //reset the enetered iput
         />
-       {!enteredNameIsValid && <p className="error-text">Name must not be empty.</p>}   //if enteredNameIsValid is false, then we show the text in the p tag
+       {!enteredNameIsValid && (      //if enteredNameIsValid is false, then we show the text in the p tag
+          <p className="error-text">Name must not be empty.</p>
+        )}   
       </div>
       <div className="form-actions">
         <button>Submit</button>
