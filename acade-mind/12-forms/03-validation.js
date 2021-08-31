@@ -20,10 +20,11 @@ const SimpleInput = (props) => {
     }
     
     setEnteredNameIsValid(true);    //pass the previous if check, then set the validation to true
-
+    
     console.log(enteredName);
+    
     const enteredValue = nameInputRef.current.value; 
-
+    
     console.log(enteredValue);
     
     setEnteredName("");    //reset the enetered iput
