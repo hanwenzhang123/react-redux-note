@@ -27,7 +27,6 @@ const SimpleInput = (props) => {
     console.log(enteredValue);
     
     setEnteredName("");    //reset the enetered iput
-//     nameInputRef.current.value = ""; 
   };
   
   const nameInputClasses = enteredNameIsValid ? "form-control" : "form-control invalid";    //set the class name dynamic based on the validation
