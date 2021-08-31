@@ -4,9 +4,8 @@ import { useRef, useState } from "react";
 const SimpleInput = (props) => {
   const nameInputRef = useRef();
   const [enteredName, setEnteredName] = useState("");
-  const [enteredNameIsValid, setEnteredNameIsValid] = useState(true);   //provide validation feedback
-                                            //set initial value true, so we do not see the validation feedback at the beginning
-  const [enteredNameTouched, setEnteredNameTouched] = useState(false);
+  const [enteredNameIsValid, setEnteredNameIsValid] = useState(false);  //provide validation feedback, set initial false, not valid at beginning
+  const [enteredNameTouched, setEnteredNameTouched] = useState(false);  //we set initial false for above, but we do not want to see see feedback initially
   
   useEffect(() => {
     if (enteredNameIsValid) {
@@ -20,6 +19,8 @@ const SimpleInput = (props) => {
 
   const formSubmissionHandler = (event) => {
     event.preventDefault(); 
+    
+    setEnteredNameTouched(true);    //touched and confirmed when form submitted
     
     if (enteredName.trim() == '') {     //adding validation
       setEnteredNameIsValid(false);
@@ -35,7 +36,7 @@ const SimpleInput = (props) => {
     setEnteredName("");    //reset the enetered iput
   };
   
-  const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
+  const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;   //only if it is touched and it is valid, then nameInputIsInvalid
 
   const nameInputClasses = nameInputIsInvalid   //set the class name dynamic based on the validation
     ? 'form-control invalid'
@@ -52,7 +53,7 @@ const SimpleInput = (props) => {
           onChange={nameInputChangeHandler} 
           value = {enteredName}     //reset the enetered iput
         />
-       {!enteredNameIsValid && (      //if enteredNameIsValid is false, then we show the text in the p tag
+       {nameInputIsInvalid && (      //if nameInputIsInvalid, then we show the text in the p tag
           <p className="error-text">Name must not be empty.</p>
         )}   
       </div>
