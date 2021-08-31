@@ -30,8 +30,8 @@ const SimpleInput = (props) => {
     event.preventDefault(); //just tell the http do nothing
     
     console.log(enteredName);
+    
     const enteredValue = nameInputRef.current.value; //ref is always an object, always have a value property to point to the value current in t hat property
-
     console.log(enteredValue);
     
     setEnteredName("");    //reset the enetered iput
