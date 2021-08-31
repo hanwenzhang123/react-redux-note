@@ -39,7 +39,7 @@ const SimpleInput = (props) => {
   };
 
   return (
-    <form>
+    <form onSubmit={formSubmissionHandler}>
       <div className="form-control">
         <label htmlFor="name">Your Name</label>
         <input
