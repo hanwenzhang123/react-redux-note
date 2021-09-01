@@ -1,6 +1,9 @@
 //Refactoring and Deriving States
 //same code as the previous one, just refactoring for better reading
 
+//Managing The Overall Form Validaty
+//adding a formIsValid to check if we should display the submit button or not
+
 //components/SimpleInput.js
 import { useState } from 'react';
 
@@ -10,6 +13,12 @@ const SimpleInput = (props) => {
 
   const enteredNameIsValid = enteredName.trim() !== '';   //check if it is valid from, the constance will store the result from the check
   const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;   //check if the input area has touched
+  
+  let formIsValid = false;
+
+  if (enteredNameIsValid) {   //check if the enteredNameIsValid
+    formIsValid = true;     //after the check, change the constant variable formIsValid to true to allow the submit button to show
+  }
  
   const nameInputChangeHandler = (event) => {
     setEnteredName(event.target.value);
@@ -54,7 +63,7 @@ const SimpleInput = (props) => {
         )}
       </div>
       <div className='form-actions'>
-        <button>Submit</button>
+        <button disabled={!formIsValid}>Submit</button>     //disable and not allow to click the submit button to show if the form is invalid
       </div>
     </form>
   );
