@@ -1,4 +1,4 @@
-//react to lost focus
+//React to Lost Focus
 //components/SimpleInput.js
 import { useEffect, useRef, useState } from 'react';
 
@@ -14,8 +14,12 @@ const SimpleInput = (props) => {
     }
   }, [enteredNameIsValid]);
 
-  const nameInputChangeHandler = (event) => {
+  const nameInputChangeHandler = (event) => { //as soon as we put something to name input, we set the validation to true
     setEnteredName(event.target.value);
+    
+    if (enteredName.trim() !== '') {   //check validation on every key stroke
+      setEnteredNameIsValid(true);   //set the validation to true
+    }
   };
 
   const nameInputBlurHandler = event => {   //here is for the input blur function
@@ -23,7 +27,6 @@ const SimpleInput = (props) => {
 
     if (enteredName.trim() === '') {    
       setEnteredNameIsValid(false);   //set the validation as false if the input is empty
-      return;
     }
   };
 
@@ -78,3 +81,4 @@ const SimpleInput = (props) => {
 };
 
 export default SimpleInput;
+  
