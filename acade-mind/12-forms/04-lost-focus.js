@@ -1,3 +1,4 @@
+//react to lost focus
 //components/SimpleInput.js
 import { useEffect, useRef, useState } from 'react';
 
