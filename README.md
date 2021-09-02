@@ -102,9 +102,33 @@ class App extends Component {
 
 export default App;
 ```
+# Redux
+## index,js - setup Redux
+```javascript
+import ReactDOM from "react-dom";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import reducer from "./reducer";
+
+import App from "./App";
+
+const store = createStore(reducer);
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  rootElement
+);
+```
+## App.js
+## action.js
+## reducer.js
 # Documentations
-[React Doc](https://reactjs.org/docs/hello-world.html)\
+[React Docs](https://reactjs.org/docs/hello-world.html)\
 [React Tutorial](https://reactjs.org/tutorial/tutorial.html)\
 [W3 School](https://www.w3schools.com/react/default.asp)\
 [Life Cycle](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram)\
 [CodeSandBox](https://codesandbox.io/s/new)
+[Redux Docs](https://redux.js.org/)
