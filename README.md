@@ -123,8 +123,80 @@ ReactDOM.render(
 );
 ```
 ## App.js
-## action.js
+```javascript
+import React from "react";
+import { connect } from "react-redux"; 
+import * as counterActions from "./action";
+
+class App extends React.Component {
+  render() {
+    const { numberForApp, incHandler, decHandler } = this.props; 
+
+    return (
+      <div className="App">
+        <h3>{numberForApp}</h3> 
+        <button onClick={incHandler}>+</button> 
+        <button onClick={decHandler}>-</button> 
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state) => ({ 
+  numberForApp: state.counterReducer 
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  incHandler: () => dispatch({ type: "INCREMENT" }), 
+  decHandler: () => dispatch(counterActions.decAction()) 
+});
+
+const ConnectedApp = connect( 
+  mapStateToProps,
+  mapDispatchToProps, 
+)(App)
+
+export default ConnectedApp
+```
+## action.js - define action
+```javascript
+const incAction = () => {
+  return {
+    type: "INCREMENT"
+  }
+}
+const decAction = () => {
+  return {
+    type: "DECREMENT"
+  }
+}
+export {
+  incAction,
+  decAction 
+}
+```
 ## reducer.js
+```javascript
+import { combineReducers } from "redux";
+
+const INIT_STATE = 1;   
+
+const counterReducer = (state = INIT_STATE, action) => { 
+  switch (action.type) { 
+    case "INCREMENT":  
+      return state + 1; 
+    case "DECREMENT":  
+      return state - 1; 
+    default:
+      return state; 
+  }
+};
+
+const rootReducer = combineReducers({   
+  counterReducer
+});
+export default rootReducer;
+```
 # Documentations
 [React Docs](https://reactjs.org/docs/hello-world.html)\
 [React Tutorial](https://reactjs.org/tutorial/tutorial.html)\
