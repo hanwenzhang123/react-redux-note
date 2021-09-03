@@ -122,7 +122,7 @@ ReactDOM.render(
   rootElement
 );
 ```
-## App.js
+## App.js - make the connection - connect(mapStateToProps, mapDispatchToProps)(App)
 ```javascript
 import React from "react";
 import { connect } from "react-redux"; 
@@ -158,7 +158,7 @@ const ConnectedApp = connect(
 
 export default ConnectedApp
 ```
-## action.js - define action
+## action.js - define action functions will be used in switch statements
 ```javascript
 const incAction = () => {
   return {
@@ -175,7 +175,7 @@ export {
   decAction 
 }
 ```
-## reducer.js
+## reducer.js - reply on the input and local state to get a predictable output
 ```javascript
 import { combineReducers } from "redux";
 
