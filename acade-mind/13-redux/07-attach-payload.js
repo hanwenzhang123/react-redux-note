@@ -13,8 +13,8 @@ const Counter = () => {
     dispatch({ type: "increment" });
   };
 
-  const increaseHandler = () => {
-    dispatch({ type: "increase", amount: 5 }); //add this extra payload to the function as the scalable amount
+  const increaseHandler = () => {   //add the action payload by adding an extra property to the action object
+    dispatch({ type: "increase", amount: 5 }); //add this extra payload to the function, the amount can be flexible
   };
 
   const decrementHandler = () => {
@@ -51,7 +51,7 @@ const counterReducer = (state = { counter: 0 }, action) => {
   }
 
   if (action.type === "increase") {   //add this increase with a scalable amount
-    return {
+    return {                //the reducer is dynamic
       counter: state.counter + action.amount,   //make sure the names are match to the property you add to the action
     };
   }
