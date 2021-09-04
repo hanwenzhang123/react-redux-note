@@ -103,7 +103,7 @@ class App extends Component {
 export default App;
 ```
 # Redux
-## index,js - setup Redux
+## index.js - setup Redux
 ```javascript
 import ReactDOM from "react-dom";
 import { createStore } from "redux";
