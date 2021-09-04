@@ -17,7 +17,7 @@ import { useReducer } from 'react';   //import useReducer
 const initialInputState = {   //the initial state
   value: '',
   isTouched: false,
-};
+}; 
 
 const inputStateReducer = (state, action) => {    //the previous state and the action to the state, both automatically passed by react
   if (action.type === 'INPUT') {      //check the input type return from the useReducer()
@@ -64,4 +64,5 @@ const useInput = (validateValue) => {
 };
 
 export default useInput;
+ 
  
