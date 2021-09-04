@@ -120,6 +120,18 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+## App.js - display the component
+```javascript
+import Counter from './components/Counter';
+
+function App() {
+  return (
+    <Counter />
+  );
+}
+
+export default App;
+```
 ## store/index.js - action/reducer
 ```javascript
 import { createStore } from 'redux';
