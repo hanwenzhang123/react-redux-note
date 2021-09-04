@@ -1,4 +1,7 @@
 //Working with multiple state properties
+never mutate, never change the existing state in redux
+instead, always overwrite by returning a brand new state object
+because it may cause bugs and unexpected results
 
 //store/index.js - Redux Store
 import { createStore } from 'redux';
@@ -9,21 +12,21 @@ const counterReducer = (state = initialState, action) => {    //set the state as
   if (action.type === 'increment') {
     return {
       counter: state.counter + 1,
-      showCounter: state.showCounter    //still need to set the showCounter, because we return overall state object which will be replaced
+      showCounter: state.showCounter    //still need to set the showCounter, because we return overall state object which will be replaced/overwritten
     };  //will return the original showCounter value since we are not changing anything 
   }
 
   if (action.type === 'increase') {
     return {
       counter: state.counter + action.amount,
-      showCounter: state.showCounter    //still need to set the showCounter, because we return overall state object which will be replaced
+      showCounter: state.showCounter    //still need to set the showCounter, because we return overall state object which will be replaced/overwritten
     };  //will return the original showCounter value since we are not changing anything
   }
 
   if (action.type === 'decrement') {
     return {
       counter: state.counter - 1,
-      showCounter: state.showCounter    //still need to set the showCounter, because we return overall state object which will be replaced
+      showCounter: state.showCounter    //still need to set the showCounter, because we return overall state object which will be replaced/overwritten
     };  //will return the original showCounter value since we are not changing anything
   }
 
