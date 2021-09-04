@@ -9,3 +9,6 @@ Deployment Steps
 - Build app for production
 - Upload production code to server
 - Configure server
+
+Optimization
+- useMemo()
