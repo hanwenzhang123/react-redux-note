@@ -33,3 +33,52 @@ const Counter = () => {
 
 export default Counter;
   
+
+//Redux with class-based components
+//same function as above
+import { connect } from "react-redux"; //you can not use hooks in class-based component, here we import connect
+
+class Counter extends Component {
+  incrementHandler() {
+    this.props.increment();
+  }
+
+  decrementHandler() {
+    this.props.decrement();
+  }
+
+  toggleCounterHandler() {}
+
+  render() {
+    return (
+      <main className={classes.counter}>
+        <h1>Redux Counter</h1>
+        <div className={classes.value}>{this.props.counter}</div>
+        <div>
+          <button onClick={this.incrementHandler.bind(this)}>Increment</button>
+          <button onClick={this.decrementHandler.bind(this)}>Decrement</button>
+        </div>
+        <button onClick={this.toggleCounterHandler}>Toggle Counter</button>
+      </main>
+    );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    counter: state.counter
+  };
+}
+// const counter = useSelector((state) => state.counter); - equivalent to using hooks
+
+const mapDispatchToProps = dispatch => {
+  return {
+    increment: () => dispatch({ type: 'increment' }),   //in the Counterr component, we have increment props that holds the function
+    decrement: () => dispatch({ type: 'decrement' }),   //in the Counterr component, we have decrement props that holds the function
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter); 
+//connect()(Counter) - HOC - connect() returns a new function, to this return function, we pass Counter
+//connect() would want 2 argument - mapStateToProps, mapDispatchToProps
+ 
