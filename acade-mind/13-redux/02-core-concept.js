@@ -62,6 +62,7 @@ const counterReducer = (state = { counter: 0 }, action) => {
 //because the reducer function will produce new state snapshots whenever an action reaches it
 //the reducer will also be executed with a default action that should spit out the initial state.
 const store = redux.createStore(counterReducer); //passing the counterReducer since store needs to know which reducer is responsible for changing the store
+//createStore need to pass a reducer function as an argument
 //store wants to know who the reducer function is that will manipulate the data
 
 console.log(store.getState()); //{ counter: 1 }
