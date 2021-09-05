@@ -3,7 +3,7 @@
 //store/index.js
 import { createSlice, configureStore } from '@reduxjs/toolkit';
 
-const initialCounterState = { counter: 0, showCounter: true }; 
+const initialCounterState = { counter: 0, showCounter: true };  //accessing data - state.counter.counter and state.counter.showCounter
 
 const counterSlice = createSlice({
   name: 'counter',
