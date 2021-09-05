@@ -1,3 +1,7 @@
+//Spitting Our Code
+instead of putting all the logic in one store/index.js file, we spit it
+good practice for large application
+
 //store/index.js
 import { configureStore } from '@reduxjs/toolkit';
 
