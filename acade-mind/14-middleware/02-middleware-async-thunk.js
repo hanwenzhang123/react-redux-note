@@ -135,3 +135,13 @@ const postsReducer = (state = initState, action) => {
             return state;
     }
 }
+
+
+//Redux Dev Tool
+import { composeWithDevTools } from "redux-devtools-extension";
+const store = createStore(
+  counterReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
+
+  
