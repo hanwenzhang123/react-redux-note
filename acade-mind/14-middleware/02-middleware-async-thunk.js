@@ -98,3 +98,9 @@ const Posts = () => {
         </div>
     )
 }
+
+
+//Loading & Error Handling
+- make use of the request/success/failure pattern to handle loading and error state
+- sperate action for request, success and failure
+ 
