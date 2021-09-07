@@ -62,6 +62,7 @@ const store = createStore(counterReducer, appliMiddleware(thunk));  //specify al
 export const fetchPosts = () => {   //only care what action creator returns (outter function), not the inner function
     return async (dispatch, getState) => {       //getState is to get what in our state
         const response = await Axios.get("URL")
+        console.log(response.data);      //print out the data we get 
         dispatch({
             type:"FETCH_POST",
             payload: response.data
@@ -69,17 +70,31 @@ export const fetchPosts = () => {   //only care what action creator returns (out
     }   //since we return a seperate function, it allows us to use async await function
 }       //since we have thunk, so we can return a function instead of just an object
 
-//reducer.js
+//reducer.js - apply the logics we needs to
 const initState = []
-const postsReducer = (state, action) => {
-    return state
+const postsReducer = (state = initState, action) => {
+    switch(action.type){
+        case "FETCH_POST":
+            return action.payload
+        default:
+            return state
+    }
 }
 
 //Post.jsx
 const Posts = () => {
    const dispatch = useDispatch()
+   const posts = useSelector((state) => state);
+    
    useEffect(()=> {
        dispatch(fetchPosts())
    },[])
-    return<div><div>
+    
+    return (
+        <div>
+            {posts.map((el) => {
+            return <h3> {el.title} </h3>;
+            })}
+        </div>
+    )
 }
