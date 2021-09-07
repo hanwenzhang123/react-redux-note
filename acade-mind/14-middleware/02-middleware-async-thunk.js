@@ -77,7 +77,7 @@ const postsReducer = (state = initState, action) => {
         case "FETCH_POST":
             return action.payload
         default:
-            return state
+            return state;
     }
 }
 
@@ -101,6 +101,37 @@ const Posts = () => {
 
 
 //Loading & Error Handling
-- make use of the request/success/failure pattern to handle loading and error state
-- sperate action for request, success and failure
- 
+// - make use of the request/success/failure pattern to handle loading and error state
+// - sperate action for request, success and failure
+//reducer.js
+const initState = {
+    items: [],
+    loading: false,
+    error: null,
+};
+
+const postsReducer = (state = initState, action) => {
+    switch(action.type){
+        case "FETCH_POST_REUQUEST":
+            return {
+                ...state.
+                loading: true,
+                error: null,
+            }
+        case "FETCH_POST_SUCCESS":
+            return {
+                ...state.
+                loading: false,
+                items: action.payload,
+            }
+        case "FETCH_POST_REUQUEST":
+            return {
+                ...state.
+                loading: false,
+                error: action.error,
+                items: [],
+            }
+        default:
+            return state;
+    }
+}
