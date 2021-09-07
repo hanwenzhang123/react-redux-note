@@ -100,6 +100,14 @@ const Posts = () => {
 }
 
 
+//Redux Dev Tool
+import { composeWithDevTools } from "redux-devtools-extension";
+const store = createStore(
+  counterReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
+
+
 //Loading & Error Handling
 // - make use of the request/success/failure pattern to handle loading and error state
 // - sperate action for request, success and failure
@@ -124,7 +132,7 @@ const postsReducer = (state = initState, action) => {
                 loading: false,
                 items: action.payload,
             }
-        case "FETCH_POST_REUQUEST":
+        case "FETCH_POST_FAILURE":
             return {
                 ...state.
                 loading: false,
@@ -136,12 +144,43 @@ const postsReducer = (state = initState, action) => {
     }
 }
 
+//action.js
+export const fetchPosts = () => async (dispatch, getState) => {
+    dispatch({type: "FETCH_POST_REQUEST"})
+    
+    try {
+        const response = await Axios.get("URL")
+        dispatch({
+            type: "FETCH_POST_SUCCESS",
+            payload: response.data
+        })
+    } catch (error) {
+        dispatch({type: "FETCH_POST_FAILURE"})
+    }
+} 
 
-//Redux Dev Tool
-import { composeWithDevTools } from "redux-devtools-extension";
-const store = createStore(
-  counterReducer,
-  composeWithDevTools(applyMiddleware(thunk))
-);
-
+//Post.jsx
+const Posts = () => {
+   const dispatch = useDispatch()
+   const posts = useSelector((state) => state);
+    
+   useEffect(()=> {
+       dispatch(fetchPosts())
+   },[])
+    
+    const renderPosts() => {
+        if(state.loading) {
+            return <h1> loading </h1>
+        }
+        return state.items.map((el) => {
+            return <h3> {el.title} </h3>;
+        })
+    }
+    
+    return (
+        <div>
+            {renderPosts()}
+        </div>
+    )
+}
   
