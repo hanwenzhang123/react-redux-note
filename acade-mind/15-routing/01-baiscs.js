@@ -26,3 +26,43 @@ our-domain.com/ => Component A
 our-domain.com/product => Component B
  (conditionally render component)
  
+
+//Set up
+//index.js
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+
+import "./index.css";
+import App from "./App";
+
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
+
+//App.js
+import { Route } from "react-router-dom";
+
+import Welcome from "./components/Welcome";
+import Products from "./components/Products";
+
+function App() {
+  return (
+    <div>
+      <Route path="/welcome">
+        <Welcome />
+      </Route>
+      <Route path="/products">
+        <Products />
+      </Route>
+    </div>
+  );
+}
+
+export default App;
+
+// our-domain.com/welcome => Welcome Component
+// our-domain.com/products => Products Component
+  
