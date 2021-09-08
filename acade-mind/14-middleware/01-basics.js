@@ -4,6 +4,9 @@ A closer look
 - where to put our code
 - the redux devtools
 
+//Refresh Practice Code
+https://github.com/academind/react-complete-guide-code/tree/19-advanced-redux/code/02-refresher-practice-finished
+
 //Side Effects, Asyns Tasks & Redux
 Reducer must be pure, side effect free, synchronous functions!!!
 Input (Old State + Action) -> Output (New State)
