@@ -33,7 +33,7 @@ const QuoteDetail = () => {
       <h1>Quote Detail Page</h1>
       <p>{params.quoteId}</p>
       <Route path={`/quotes/${params.quoteId}/comments`}>
-        <Comments />
+        <Comments />    //the <Comments /> only shows when we are on "/quotes/${params.quoteId}/comments" for URL
       </Route>   
       //alternatively, since we are defining a route here (not a link), you can also set "path='/quotes/:quoteId/comments'"
     </Fragment>
