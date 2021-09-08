@@ -19,3 +19,10 @@ Page (URL) changes are then handled by client-side (React) code -> changes the v
 https://reactrouter.com/
 https://github.com/remix-run/react-router
  
+the goal is that we are able to handle different paths on our page
+and load (render) different components for the different paths 
+//different path in URL
+our-domain.com/ => Component A
+our-domain.com/product => Component B
+ (conditionally render component)
+ 
