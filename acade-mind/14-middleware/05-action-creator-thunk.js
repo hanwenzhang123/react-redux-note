@@ -1,7 +1,7 @@
 //Using an Action Creator Thunk
-A function that delays an action until later
+A function that delays an action until later (until something else finished)
 An action creator function that does NOT return the action itself but another funtcion which eventually returrns the action
-
+So that we can run some other code before we then dispatch the actual action object that we did want to create.
 
 //store/cart-slice.js
 import { createSlice } from '@reduxjs/toolkit';
@@ -49,9 +49,9 @@ const cartSlice = createSlice({
   },
 });
 
-export const sendCartData = (cart) => {   //add Action Creator here
-  return async (dispatch) => {    //a second argument, return value
-    dispatch(   //not yet reached reducer, run any asyn before it
+export const sendCartData = (cart) => {   //create our Action Creator here, a function returns another function
+  return async (dispatch) => {    //a second argument, receive the dispatch function as an argument
+    dispatch(   //above here is not yet reached reducer, soo you can run any asyn before it
         uiActions.showNotification({
         status: 'pending',
         title: 'Sending...',
@@ -74,7 +74,7 @@ export const sendCartData = (cart) => {   //add Action Creator here
     };
 
     try {
-      await sendRequest();
+      await sendRequest(); //function called at try block
 
       dispatch(
         uiActions.showNotification({
@@ -123,8 +123,8 @@ function App() {
       return;
     }
 
-    dispatch(sendCartData(cart));   //call the sendCartData() and passing "cart" to it
-  }, [cart, dispatch]);
+    dispatch(sendCartData(cart));   //call the sendCartData() from cart-slice and passing "cart" from useSelector((state) => state.cart to it
+  }, [cart, dispatch]);   //whenever cart changes, re-render, and dispatch the function to save the data
 
   return (
     <Fragment>
