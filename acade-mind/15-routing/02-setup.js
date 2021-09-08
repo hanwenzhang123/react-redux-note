@@ -16,8 +16,8 @@ ReactDOM.render(    //wrap the App
 //App.js
 import { Route } from "react-router-dom";   //import
 
-import Welcome from "./components/Welcome";
-import Products from "./components/Products";
+import Welcome from "./pages/Welcome";
+import Products from "./pages/Products";
 
 function App() {
   return (      //using <Route path="/{path}"> </Route> to wrap the component you would like to run with that URL
