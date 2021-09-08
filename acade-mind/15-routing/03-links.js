@@ -24,3 +24,8 @@ const MainHeader = () => {
 };
 
 export default MainHeader;
+
+//<NavLink to="/{actual address we want to link to}"> </NavLink>
+Basically like the standard link.
+It still creates an anchored tag catches the click, prevents the browser default
+NavLink also will set a CSS class on the active anchor item.
