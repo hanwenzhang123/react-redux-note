@@ -23,7 +23,7 @@ export default Welcome;
 
 //pages/QuoteDetail.js
 import { Fragment } from "react";
-import { useParams, Route } from "react-router-dom";
+import { useParams, Route } from "react-router-dom";  //import Route for nested routes
 import Comments from "../components/comments/Comments";
 
 const QuoteDetail = () => {
@@ -32,7 +32,8 @@ const QuoteDetail = () => {
     <Fragment>
       <h1>Quote Detail Page</h1>
       <p>{params.quoteId}</p>
-      <Route path={`/quotes/${params.quoteId}/comments`}>
+      // this route path is constructed dynamically and it depends on the quote id for which this quote detail component was loaded.
+      <Route path={`/quotes/${params.quoteId}/comments`}> 
         <Comments />    //the <Comments /> only shows when we are on "/quotes/${params.quoteId}/comments" for URL
       </Route>   
       //alternatively, since we are defining a route here (not a link), you can also set "path='/quotes/:quoteId/comments'"
