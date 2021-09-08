@@ -20,3 +20,24 @@ const Welcome = () => {
 
 export default Welcome;
    
+
+//pages/QuoteDetail.js
+import { Fragment } from "react";
+import { useParams, Route } from "react-router-dom";
+import Comments from "../components/comments/Comments";
+
+const QuoteDetail = () => {
+  const params = useParams();
+  return (
+    <Fragment>
+      <h1>Quote Detail Page</h1>
+      <p>{params.quoteId}</p>
+      <Route path={`/quotes/${params.quoteId}/comments`}>
+        <Comments />
+      </Route>   
+      //alternatively, since we are defining a route here (not a link), you can also set "path='/quotes/:quoteId/comments'"
+    </Fragment>
+  );
+};
+
+export default QuoteDetail;
