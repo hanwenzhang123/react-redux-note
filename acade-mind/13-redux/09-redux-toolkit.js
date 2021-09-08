@@ -12,6 +12,9 @@ npm install @reduxjs/toolkit
 //reducers - a map of all the reducers
 a map of methods that represent all the different cases, the different actions we wanna handle with that reducer.
 
+//when using Redux Toolkit, we are not really mutating the state,
+We capture the code and translate to immutable the code which creates a new state object instead of manipulating the existing one.
+
 //Connecting Redux Toolkit State
 
 //store/index.js
@@ -39,7 +42,7 @@ const counterSlice = createSlice({    //createSlice() wants an object as argumen
   }
 });
 
-const store = configureStore({    //pass a configuration object
+const store = configureStore({    //pass a configuration object, like creating the store
   reducer: counterSlice.reducer   //pass reducer as the main reducer function for the global state
   //when we have a larger application, we can pass an object like reducer: {counter: counterSlice.reducer}
 });
