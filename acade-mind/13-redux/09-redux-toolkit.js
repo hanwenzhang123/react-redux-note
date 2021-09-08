@@ -9,6 +9,9 @@ Redux Toolkit to avoid these potential problem
 //https://redux-toolkit.js.org/
 npm install @reduxjs/toolkit
 
+//reducers - a map of all the reducers
+a map of methods that represent all the different cases, the different actions we wanna handle with that reducer.
+
 //Connecting Redux Toolkit State
 
 //store/index.js
