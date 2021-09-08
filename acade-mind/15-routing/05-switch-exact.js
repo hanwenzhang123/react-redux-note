@@ -6,6 +6,7 @@ And then only one of these routes, will be active at the same time.
 And it will be the route which is matched first.
 
 //exact
+With exact, we do not look at the beginning of the path but we only match full paths.
 The route should only lead to a match if we have an exact route match.
 
   
