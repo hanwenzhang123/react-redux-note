@@ -27,4 +27,12 @@ Backend API  -|
     |     Transform data & send data (i.e. more code on the front-end, ahead of the reducer)
 Frontend React API  -|
     
-    
+
+//Where to put our logic (code)? Where should our logic (code) go?
+Fat Reducers vs Fat Components vs Fat Actions
+- synchoronous, side-effect free code (i.e. data transformations)
+    - prefer reducers
+    - avoid action creatos or components
+- async code or code with side-effects
+    - prefer action creatos or components
+    - avoid reducers
