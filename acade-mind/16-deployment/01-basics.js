@@ -12,3 +12,18 @@ Deployment Steps
 
 Optimization
 - useMemo()
+
+//Build the code for production
+npm run build 
+- build production output
+- once you run npm run build, we have a build folder
+- the content of the build folder holds all you need to deploy to the server at the end
+
+//Getting Started with Deployment (uploading files)
+A react SPA is a "Static Website"
+- only HTML, CSS & JavaScript
+
+//Exploring Routing Issues & Finishing Deployment
+
+
+  
