@@ -1,2 +1,7 @@
 Authentication
-//Adding Authentication to React Apps
+Adding Authentication to React Apps
+- How Authentication Works in React Apps
+- Implementing User Authentication
+- Adduing Auth Persistence & Auto-Loggout
+
+Authentication is needed if content should be protected (not accessible by everyone)
