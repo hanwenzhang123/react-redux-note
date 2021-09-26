@@ -1,3 +1,6 @@
+//Testing User Interaction & State
+Test all possible scenarios that make sense
+
 //Greeting.test.js
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -46,6 +49,6 @@ describe('Greeting component', () => {
  
      // Assert
      const outputElement = screen.queryByText('good to see you', { exact: false });
-     expect(outputElement).toBeNull();
+     expect(outputElement).toBeNull();  //.not.toBeInTheDocument();
   });
 });
