@@ -50,3 +50,12 @@ required tools & setup
   - react testing library
 both tools are already set up for you when using create-react app
   
+//Jest - JS Testing Documentation
+https://jestjs.io/docs/getting-started
+
+//React Testing Library - React Testing Documentation
+https://testing-library.com/docs/react-testing-library/intro/
+
+//React Hooks Testing Library
+https://github.com/testing-library/react-hooks-testing-library
+ 
