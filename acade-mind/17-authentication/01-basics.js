@@ -19,8 +19,11 @@ We can not just save and use the "yes", we could send a fake "yes" to the server
 server-side sessions 
 - (server grant your access, stores unique indentifier on server, send same identifier to the client)
 - (client sends identifier along with requests to protected resources)
-authentication tokens (compare coded user credential in database)
-- create but not store "permission" token on server, send token to client
+authentication tokens 
+- send credentials to server, and the server validates credentials
+- comparing the combination to what is stored in the database
+- if that is valid, then the server creates a permission token
+- create but not store "permission" token on server (server is stateless), send token to client
 - client sends token along with requests to protected resources
 
 When working with "Authentication Tokens", 
