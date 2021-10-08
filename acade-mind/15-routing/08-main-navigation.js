@@ -1,7 +1,7 @@
 Adding a Layout Wrapper Component
 
 //components/layout/MainNavigation.js
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';   //for links, do not use <a> which will trigger a new request
 
 import classes from './MainNavigation.module.css';
 
@@ -12,7 +12,7 @@ const MainNavigation = () => {
       <nav className={classes.nav}>
         <ul>
           <li>
-            <NavLink to='/quotes' activeClassName={classes.active}>
+            <NavLink to='/quotes' activeClassName={classes.active}> 
               All Quotes
             </NavLink>
           </li>
