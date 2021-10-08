@@ -39,6 +39,8 @@ export default QuoteList;
 
 
 //src/components/quotes/QuoteItem.js
+import { Link } from 'react-router-dom';
+
 import classes from './QuoteItem.module.css';
 
 const QuoteItem = (props) => {    //display each quote
@@ -50,13 +52,11 @@ const QuoteItem = (props) => {    //display each quote
         </blockquote>
         <figcaption>{props.author}</figcaption>
       </figure>
-      <a className='btn'>
+      <Link className='btn' to={`/quotes/${props.id}`}>
         View Fullscreen
-      </a>
+      </Link>
     </li>
   );
 };
 
 export default QuoteItem;
-
-  
