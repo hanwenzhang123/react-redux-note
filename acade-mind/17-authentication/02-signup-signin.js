@@ -25,7 +25,7 @@ const AuthForm = () => {
   };
 
   const submitHandler = (event) => {
-    event.preventDefault(); //prevent browser default that sends the form automatically
+    event.preventDefault();
 
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
@@ -34,41 +34,57 @@ const AuthForm = () => {
 
     setIsLoading(true);
 
+    let url;
     if (isLogin) {
+      //send sign-in request
+      url =
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyA69DiEktDbp4YUGmySMz3-A_y5DnlhAJ0";
     } else {
-      //send signup request
-      fetch(
-        //fetch returns promise so you can handle error and chain .then()
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA69DiEktDbp4YUGmySMz3-A_y5DnlhAJ0",
-        {
-          method: "POST",
-          body: JSON.stringify({
-            //the data we want to send
-            email: enteredEmail,
-            password: enteredPassword,
-            returnSecureToken: true,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        } //2nd argument in fetch function, an object describe and configure the request we send (overwrites)
-      ).then((res) => {
+      //send sign-up request
+      url =
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA69DiEktDbp4YUGmySMz3-A_y5DnlhAJ0";
+    }
+
+    //fetch returns promise so you can handle error and chain .then()
+    //2nd argument in fetch function, an object describe and configure the request we send (overwrites)
+
+    fetch(
+      url, //use a dynamic url variable based on the user request
+      {
+        method: "POST",
+        body: JSON.stringify({
+          //the data we want to send
+          email: enteredEmail,
+          password: enteredPassword,
+          returnSecureToken: true,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((res) => {
         setIsLoading(false);
         if (res.ok) {
-          //...
+          return res.json();
         } else {
           return res.json().then((data) => {
             //show an error modal
             //show feedback to the user
+            // if (data && data.error && data.error.message) {
+            //   errorMessage = data.error.message;
+            // }
             let errorMessage = "Authentication failed!";
-            if (data && data.error && data.error.message) {
-              errorMessage = data.error.message;
-            }
-            alert(errorMessage);
+            throw new Error(errorMessage);  //forward to the catch block by throwing an error
           });
         }
+      })
+      .then((data) => { //the request successful for sure here if no errors
+        console.log(data)
+      })
+      .catch((err) => {
+        alert(err.message);
       });
-    }
   };
 
   return (
