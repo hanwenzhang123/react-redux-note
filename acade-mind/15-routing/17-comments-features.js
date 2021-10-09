@@ -6,8 +6,8 @@ import { useParams } from 'react-router-dom';
 
 import classes from './Comments.module.css';
 import NewCommentForm from './NewCommentForm';
-import useHttp from '../../hooks/use-http';
-import { getAllComments } from '../../lib/api';
+import useHttp from '../../hooks/use-http';     //import
+import { getAllComments } from '../../lib/api'; //import
 import LoadingSpinner from '../UI/LoadingSpinner';
 import CommentsList from './CommentsList';
 
@@ -18,6 +18,29 @@ const Comments = () => {
   const { quoteId } = params;
 
   const { sendRequest, status, data: loadedComments } = useHttp(getAllComments);
+  
+// export async function getAllComments(quoteId) {
+//   const response = await fetch(`${FIREBASE_DOMAIN}/comments/${quoteId}.json`);
+
+//   const data = await response.json();
+
+//   if (!response.ok) {
+//     throw new Error(data.message || "Could not get comments.");
+//   }
+
+//   const transformedComments = [];
+
+//   for (const key in data) {
+//     const commentObj = {
+//       id: key,
+//       ...data[key],
+//     };
+
+//     transformedComments.push(commentObj);
+//   }
+
+//   return transformedComments;
+// }
 
   useEffect(() => {
     sendRequest(quoteId);   //send request to load the comment
@@ -86,6 +109,25 @@ const NewCommentForm = (props) => {
   const commentTextRef = useRef();
 
   const { sendRequest, status, error } = useHttp(addComment);
+  
+// export async function addComment(commentData) {
+//   const response = await fetch(
+//     `${FIREBASE_DOMAIN}/comments/${commentData.quoteId}.json`,
+//     {
+//       method: "POST",
+//       body: JSON.stringify(commentData.commentData),
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     }
+//   );
+//   const data = await response.json();
+//   if (!response.ok) {
+//     throw new Error(data.message || "Could not add comment.");
+//   }
+
+//   return { commentId: data.name };
+// }
 
   const { onAddedComment } = props;
 
