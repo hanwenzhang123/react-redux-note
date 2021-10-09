@@ -52,7 +52,7 @@ const QuoteItem = (props) => {    //display each quote
         </blockquote>
         <figcaption>{props.author}</figcaption>
       </figure>
-      <Link className='btn' to={`/quotes/${props.id}`}>
+      <Link className='btn' to={`/quotes/${props.id}`}>   //the link goes to which url based on the props.id
         View Fullscreen
       </Link>
     </li>
