@@ -27,10 +27,10 @@ function App() {
  
       const loadedMovies = [];    //initially empty
 
-      for (const key in data) { 
+      for (const key in data) {   //data is an object
         loadedMovies.push({
           id: key,
-          title: data[key].title,
+          title: data[key].title,   //dynamically access the values in objects
           openingText: data[key].openingText,
           releaseDate: data[key].releaseDate,
         });
