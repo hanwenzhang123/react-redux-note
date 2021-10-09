@@ -18,6 +18,8 @@ const ProductDetail = () => {
 
   console.log(params.productId);  //We used ":productId" as the key for the dynamic path segment, so it will prints out the value in URL
 
+// <Route path="/product-detail/:productId"> <ProductDetail> </Route> - the path we have in App.js
+    
   return (
     <section>
       <h1>Product Detail</h1>
