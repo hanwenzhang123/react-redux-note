@@ -1,4 +1,6 @@
 //Implementing Programmatic (Imperative) Navigation
+Not a link, but an action triggered by our code
+//Imperative sentences are used to issue a command or instruction, make a request, or offer advice. 
 
 //src/pages/NewQuote.js
 import { useHistory } from 'react-router-dom';    //import the hook useHistory that changes browser history
@@ -6,7 +8,7 @@ import { useHistory } from 'react-router-dom';    //import the hook useHistory t
 import QuoteForm from '../components/quotes/QuoteForm';
 
 const NewQuote = () => {
-  const history = useHistory();
+  const history = useHistory();   //use the hook
 
   const addQuoteHandler = (quoteData) => { 
     console.log(quoteData);
