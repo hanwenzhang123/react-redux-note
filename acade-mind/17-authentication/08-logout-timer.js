@@ -48,7 +48,7 @@ export const AuthContextProvider = (props) => {
 
   const userIsLoggedIn = !!token;
 
-  const logoutHandler = useCallback(() => {
+  const logoutHandler = useCallback(() => {   //we use useCallback due to useEffect
     setToken(null);
     localStorage.removeItem("token"); //remove the key
     localStorage.removeItem("expirationTime"); //remove the expiration time
@@ -73,8 +73,8 @@ export const AuthContextProvider = (props) => {
     if (tokenData) {
       console.log(tokenData.duration);
       logoutTimer = setTimeout(logoutHandler, tokenData.duration);
-    }
-  }, [tokenData, logoutHandler]);
+    }     //we need to make sure logoutHandler not recreated unnecessarily to prevent infinite loops or unnecessary effect execution, so we use callback
+  }, [tokenData, logoutHandler]); 
 
   const contextValue = {
     token: token,
