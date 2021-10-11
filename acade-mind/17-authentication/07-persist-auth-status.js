@@ -111,9 +111,9 @@ const submitHandler = (event) => {
       })
       .then((data) => {
         const expirationTime = new Date(
-          new Date.getTime() + +data.expiresIn * 1000
-        ); //+ converts to number, *1000 from seconds to milliseconds
-        authCtx.login(data.idToken, expirationTime.toISOString);    //save a login expiration time
+          new Date.getTime() + +data.expiresIn * 1000   //.expiresIn is the response payload from firebase
+        ); //.getTime() returns the number of milliseconds, + converts to number, *1000 from seconds to milliseconds
+        authCtx.login(data.idToken, expirationTime.toISOString); //.idToken is the response payload from firebase, here we save a login expiration time
         history.replace("/");
       })
       .catch((err) => {
