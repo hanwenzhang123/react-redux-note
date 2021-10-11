@@ -10,8 +10,8 @@ const AuthContext = React.createContext({
   logout: () => {},
 });
 
+//add this function for adding auto-logout
 const calculateRemainingTime = (expirationTime) => {
-  //add this function for adding auto-logout
   const currentTime = new Date().getTime(); //get the current time in milliseconds
   const adjExpirationTime = new Date(expirationTime).getTime; //gonna be sometime in the future
   const remainingDuration = adjExpirationTime - currentTime;
@@ -23,7 +23,7 @@ const retrieveStoredToken = () => {
   const storedToken = localStorage.getItem("token"); //no need useEffect because localStorage is synchronous API
   const storedExpirationDate = localStorage.getItem("expirationTime");
 
-  const remainingTime = calculateRemainingTime(storedExpirationDate);
+  const remainingTime = calculateRemainingTime(storedExpirationDate);   //the function we declared above to calculate remainingDuration
 
   if (remainingTime <= 3600) {
     localStorage.removeItem("token");
@@ -31,16 +31,16 @@ const retrieveStoredToken = () => {
     return null;
   }
 
-  return {
+  return {  //when we call retrieveStoredToke, we get this object
     token: storedToken,
     duration: remainingTime,
   };
 };
 
 export const AuthContextProvider = (props) => {
-  const tokenData = retrieveStoredToken();
+  const tokenData = retrieveStoredToken();    //we get the retrieved stored token data object
   let initialToken;
-  if (tokenData) {
+  if (tokenData) {    //check to make sure we did not return null above
     initialToken = tokenData.token;
   }
 
@@ -48,8 +48,8 @@ export const AuthContextProvider = (props) => {
 
   const userIsLoggedIn = !!token;
 
-  const logoutHandler = useCallback(() => {   //we use useCallback due to useEffect
-    setToken(null);
+  const logoutHandler = useCallback(() => {   //we use useCallback due to useEffect to make sure not re-created unnecessarily to prevent infinite loops or unnecessary effect execution
+    setToken(null); //setToken null due to log out status
     localStorage.removeItem("token"); //remove the key
     localStorage.removeItem("expirationTime"); //remove the expiration time
 
@@ -60,7 +60,7 @@ export const AuthContextProvider = (props) => {
   }, []);
 
   const loginHandler = (token, expirationTime) => {
-    setToken(token);
+    setToken(token);  //setToken to current token due to log in status
     localStorage.setItem("token", token); //store the token
     localStorage.setItem("expirationTime", expirationTime); //expirationTime is the string we pass to the param
 
@@ -72,8 +72,8 @@ export const AuthContextProvider = (props) => {
   useEffect(() => {
     if (tokenData) {
       console.log(tokenData.duration);
-      logoutTimer = setTimeout(logoutHandler, tokenData.duration);
-    }     //we need to make sure logoutHandler not recreated unnecessarily to prevent infinite loops or unnecessary effect execution, so we use callback
+      logoutTimer = setTimeout(logoutHandler, tokenData.duration);    //tokenData.duration is the milliseconds
+    }     //we need to make sure logoutHandler not re-created unnecessarily to prevent infinite loops or unnecessary effect execution, so we use callback above
   }, [tokenData, logoutHandler]); 
 
   const contextValue = {
