@@ -7,6 +7,7 @@ if it is we log the user in automatically so that the user does not need to re-e
 //Storing the data
 Common storage for browser: cookie, local storage
 storage mechanism built into the browser totally independent of react.
+local storage access can be a common reason for using useEffect
 
 
 //   localStorage.setItem("isLoggedIn", "1");
