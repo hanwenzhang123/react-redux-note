@@ -90,7 +90,9 @@ const bodyParser = require('body-parser');   // gives us ready-to-use middleware
 
 const app = express();  //call the function
 
-// NO needs for the code below due to bodyParser
+//app.use(bodyParser) => NO needs for the code below due to bodyParser
+//app.use(<specific_middleware_layer_here>)
+//by adding bodyParser, you ensure your server handles incoming requests through the express middleware. 
 
 // app.use((req, res, next) => {
 //   let body = '';
