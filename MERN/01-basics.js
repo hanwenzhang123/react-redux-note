@@ -16,11 +16,13 @@ The Backend (Server)
 - Decoupled Ends
 - Backend built by API (expose entry points - control over actions)
   
-REST API & GraphQL API  
-   - execute code on the server (not yet talk to database), talk to your Node Express app and that Node Express app will then do something 
-      based on the action which is triggered because of your path verb combination or because of your query command,
-         then it is your Node Express server which will talk to a database.
-   - can do anything on the server, like store data in a database, validate user input, get data from a database and so on. 
+
+//REST API & GraphQL API  
+- execute code on the server (not yet talk to database), talk to your Node Express app and that Node Express app will then do something 
+   based on the action which is triggered because of your path verb combination or because of your query command,
+      then it is your Node Express server which will talk to a database.
+- can do anything on the server, like store data in a database, validate user input, get data from a database and so on. 
+
 REST API
 - Different URLs + HTTP verbs (= endpoints) for different actions
 GraphQL API 
@@ -54,27 +56,27 @@ const http = require('http');
 
 const server = http.createServer((req, res) => {
   console.log('INCOMING REQUEST');
-  console.log(req.method, req.url);
+  console.log(req.method, req.url); //GET /
 
-  if (req.method === 'POST') {
-    let body = '';
-    req.on('end', () => {
+  if (req.method === 'POST') {      //POST request
+    let body = '';      //username=Max
+    req.on('end', () => {  //after sending the post request, the end action
       const userName = body.split('=')[1];
       res.end('<h1>' + userName + '</h1>');
     });
 
-    req.on('data', (chunk) => {
+    req.on('data', (chunk) => {  //data we get from the response body
       body += chunk;
     });
-  } else {
-    res.setHeader('Content-Type', 'text/html');
+  } else {     //GET request
+    res.setHeader('Content-Type', 'text/html');    //header to set the data type
     res.end(
       '<form method="POST"><input type="text" name="username"><button type="submit">Create User</button></form>'
     );
   }
 });
 
-server.listen(5000);
+server.listen(5000); //server - localhost 5000
 
  
 //What is express.js
@@ -84,23 +86,48 @@ server.listen(5000);
 
 //app.js
 const express = require('express');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');   // gives us ready-to-use middlewares which we can use in Express apps to parse incoming request bodies.
 
-const app = express();
+const app = express();  //call the function
 
-app.use(bodyParser.urlencoded({ extended: false }));
+// NO needs for the code below due to bodyParser
 
-app.post('/user', (req, res, next) => {
+// app.use((req, res, next) => {
+//   let body = '';
+//   req.on('end', () => {
+//     const userName = body.split('=')[1];
+//     if (userName) {
+//       req.body = { name: userName };
+//     }
+//     next();    //with next() middleware, you forward the request to the next next() middleware
+//   });
+//   req.on('data', chunk => {
+//     body += chunk;
+//   });
+// });
+
+// app.use((req, res, next) => {
+//   if (req.body) {
+//     return res.send('<h1>' + req.body.name + '</h1>');
+//   }
+//   res.send(
+//     '<form method="POST"><input type="text" name="username"><button type="submit">Create User</button></form>'
+//   );
+// });
+
+//bodyParser.json for JSON data
+app.use(bodyParser.urlencoded({ extended: false }));  //will parse all incoming requests and try to extract any data which is in your body if it is of type urlencoded data
+
+app.post('/user', (req, res, next) => {      //with path (exact match) that triggers for post request
   res.send('<h1>User: ' + req.body.username + '</h1>');
 });
 
-app.get('/', (req, res, next) => {
+app.get('/', (req, res, next) => {     //with path (exact match) that triggers for get request
   res.send(
     '<form action="/user" method="POST"><input type="text" name="username"><button type="submit">Create User</button></form>'
   );
 });
 
-app.listen(5000);
+app.listen(5000); //set up the server run at localhost 5000
 
-
-
+  
