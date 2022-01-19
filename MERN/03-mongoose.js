@@ -9,7 +9,9 @@ npm i mongodb
 
 //What is Mongoose?
 - a popular library for MongoDB
+- mongoose use schema - allow you to define the structure of the documents you want
 
+npm i moongoose
 
 //MongoDB
 //app.js
@@ -48,7 +50,7 @@ const createProduct = async (req, res, next) => {
   };
   client.close(); //close the connection!
 
-  res.json(newProduct);
+  res.json(newProduct); //response as json data 
 };
 
 const getProducts = async (req, res, next) => {
@@ -65,7 +67,7 @@ const getProducts = async (req, res, next) => {
   };
   client.close(); //close the connection!
 
-  res.json(products);
+  res.json(products);   //get the products as the response
 };
 
 exports.createProduct = createProduct;
@@ -84,16 +86,16 @@ app.use(bodyParser.json());
 
 app.post('/products', mongoPractice.createProduct);
 
-// app.get('/products', mongoPractice.getProducts);
+app.get('/products', mongoPractice.getProducts);
 
 app.listen(3000);
 
 //mongoose.js
 const mongoose = require('mongoose');
 
-const Product = require('./models/product');
+const Product = require('./models/product');  //require the model
 
-mongoose.connect(
+mongoose.connect(   //connect to the database, return a promise, we can chain the then logic
   'mongodb+srv://manu:KyOP1JrHoErqQILt@cluster0-g8eu9.mongodb.net/products_test?retryWrites=true&w=majority'
 ).then(() => {
     console.log('Connected to database!')
@@ -102,24 +104,30 @@ mongoose.connect(
 });
 
 const createProduct = async (req, res, next) => {
-  const createdProduct = new Product({
+  const createdProduct = new Product({  //create a new product based on the schema logics
     name: req.body.name,
     price: req.body.price
   });
-  const result = await createdProduct.save();
-
-  res.json(result);
+  console.log(createdProduct);  //the _id will be added automatically
+  const result = await createdProduct.save(); //save function, no needs to worry things like insertOne
+  console.log(typeof createdProduct._id); //typeof createdProduct - project; typeof createdProduct._id - string; unique ID added automatically
+  res.json(result);   //response in json pass with our result
 };
+
+const getProducts = async (req, res, next) => {
+  const products = await Product.find().exec(); //turn into real promise by adding .exec(), like toArray in MongoDB
+  res.json(products);   //return response with products in our database
+}
 
 exports.createProduct = createProduct;
 
 //models/product
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); //require mongoose
 
-const productSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({ //Schema like the blueprint, constructor function
     name: { type: String, required: true },
     price: { type: Number, required: true }
 });
 
-module.exports = mongoose.model('Product', productSchema);
+  module.exports = mongoose.model('Product', productSchema);  //model builds up our blueprint
  
