@@ -71,3 +71,55 @@ const getProducts = async (req, res, next) => {
 exports.createProduct = createProduct;
 exports.getProducts = getProducts;
  
+
+//Mongoose
+//app.js
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoPractice = require('./mongoose');
+
+const app = express();
+
+app.use(bodyParser.json());
+
+app.post('/products', mongoPractice.createProduct);
+
+// app.get('/products', mongoPractice.getProducts);
+
+app.listen(3000);
+
+//mongoose.js
+const mongoose = require('mongoose');
+
+const Product = require('./models/product');
+
+mongoose.connect(
+  'mongodb+srv://manu:KyOP1JrHoErqQILt@cluster0-g8eu9.mongodb.net/products_test?retryWrites=true&w=majority'
+).then(() => {
+    console.log('Connected to database!')
+}).catch(() => {
+    console.log('Connection failed!')
+});
+
+const createProduct = async (req, res, next) => {
+  const createdProduct = new Product({
+    name: req.body.name,
+    price: req.body.price
+  });
+  const result = await createdProduct.save();
+
+  res.json(result);
+};
+
+exports.createProduct = createProduct;
+
+//models/product
+const mongoose = require('mongoose');
+
+const productSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    price: { type: Number, required: true }
+});
+
+module.exports = mongoose.model('Product', productSchema);
+ 
