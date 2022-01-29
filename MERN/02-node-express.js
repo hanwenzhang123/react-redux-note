@@ -108,4 +108,12 @@ app.get('/', (req, res, next) => {     //with path (exact match) that triggers f
 app.listen(5000); //set up the server run at localhost 5000
 
   
-  
+//Error Handling Middleware
+app.use((error, req, res, next) => {  //express automatically knows error handling when there are 4 params
+  if(res.headerSend){
+    return next(error)
+  }
+  res.status(error.code || 500);
+  res.json({message: error.message || "An unknown error occurred"})
+})
+ 
