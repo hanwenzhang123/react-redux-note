@@ -110,10 +110,16 @@ app.listen(5000); //set up the server run at localhost 5000
   
 //Error Handling Middleware
 app.use((error, req, res, next) => {  //express automatically knows error handling when there are 4 params
-  if(res.headerSend){
+  if(res.headerSend){ //check if the response has already been sent
     return next(error)
   }
   res.status(error.code || 500);
   res.json({message: error.message || "An unknown error occurred"})
 })
  
+if(!place){
+  const error = new Error("can not find a plance for the provided id")
+  error.code = 404;
+  throw error; //triggers the error handling middleware 
+//   return next(error);  //next does not cancel next function, so we have to return it
+}
