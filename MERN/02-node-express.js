@@ -123,3 +123,14 @@ if(!place){
   throw error; //triggers the error handling middleware 
 //   return next(error);  //next does not cancel next function, so we have to return it
 }
+
+//Own Error Model
+class HttpError extends Error {
+  constructor(message, errorCode) {
+    super(message);
+    this.code = errorCode;
+  }
+}
+
+module.exports = HttpError;
+
