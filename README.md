@@ -15,7 +15,7 @@ npm start
 ```
 
 # Deploying a React App on GitHub
-```
+```js
 npm install gh-pages --save-dev
 ```
 ```json
@@ -29,7 +29,7 @@ npm install gh-pages --save-dev
   "deploy": "gh-pages -d build"
 }
 ```
-```
+```js
 npm run deploy
 ```
 
@@ -42,7 +42,7 @@ npm run deploy
 > npm install --save concurrently
 - added the following script in `package.json` of the backend file:
 
-```js
+```json
 "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
@@ -50,7 +50,7 @@ npm run deploy
     "start": "concurrently \"npm run dev\" \"npm run client\""
 },
 ```
-```js
+```json
  "dependencies": {
      "concurrently": "^7.0.0",
  }
