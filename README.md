@@ -40,8 +40,8 @@ npm run deploy
 - No longer need a separate server and go to the folder frontend run `npm start` to start the client since it is now both run concurrently.
 
 > npm install --save concurrently
-- added the following script in `package.json` of the backend file:
 
+- added the following script in `package.json` of the backend folder:
 ```json
 "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -55,6 +55,13 @@ npm run deploy
      "concurrently": "^7.0.0",
  }
  ```
+ 
+- added the following script in `package.json` of the frontend folder:
+```json
+{
+  "proxy": "http://localhost:3001",
+}
+```
  
 # Functional React Boilerplate
 ## index.js 
