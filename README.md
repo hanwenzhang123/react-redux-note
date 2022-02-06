@@ -13,6 +13,7 @@ npm start
 npm install
 npm start
 ```
+
 # Deploying a React App on GitHub
 ```
 npm install gh-pages --save-dev
@@ -31,6 +32,30 @@ npm install gh-pages --save-dev
 ```
 npm run deploy
 ```
+
+## MERN APP => Running Concurrently
+
+**Please go to the folder backend, and run `npm start` to start the server**
+
+- No longer need a separate server and go to the folder frontend run `npm start` to start the client since it is now both run concurrently.
+
+> npm install --save concurrently
+- added the following script in `package.json` of the backend file:
+
+```js
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "client": "cd .. && cd frontend && npm start",
+    "start": "concurrently \"npm run dev\" \"npm run client\""
+},
+```
+```js
+ "dependencies": {
+     "concurrently": "^7.0.0",
+ }
+ ```
+ 
 # Functional React Boilerplate
 ## index.js 
 ReactDOM.render(what to show, where to show it);
