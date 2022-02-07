@@ -64,7 +64,7 @@ npm run deploy
 ```
 
 - Node / Express: EADDRINUSE, Address already in use - Kill server
-> sudo lsof -i :3001
+> sudo lsof -i :3001\
 > kill -9 {PID}
  
 # Functional React Boilerplate
