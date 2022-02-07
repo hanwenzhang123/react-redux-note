@@ -62,6 +62,10 @@ npm run deploy
   "proxy": "http://localhost:3001",
 }
 ```
+
+- Node / Express: EADDRINUSE, Address already in use - Kill server
+> sudo lsof -i :3001
+> kill -9 {PID}
  
 # Functional React Boilerplate
 ## index.js 
