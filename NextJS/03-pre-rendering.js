@@ -17,7 +17,7 @@ only component files in the pages folder
 //will contain full html code that is good for seo during the build process
 
 
-1. getStaticProps()
+1. getStaticProps(){}
 //when you do not have data that change multiple times every second
 //and no needs access to request object like authentication
 export async function getStaticProps(){
@@ -37,7 +37,7 @@ export async function getStaticProps(){
 }
 
 
-2. getServerSideProps() 
+2. getServerSideProps(){}
 //pre-generated for every incoming request
 //will not run building, but instead always on the server after deployment
 //only run server, not run on the client
@@ -56,3 +56,7 @@ export async function getServerSideProps(context){  //context parameter that you
 }
  
  
+3. getStaticPaths(){} 
+//only needs when use getStaticProps
+export async function getStaticPaths(){
+} 
