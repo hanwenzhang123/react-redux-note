@@ -59,8 +59,8 @@ export async function getServerSideProps(context){  //context parameter that you
 3. getStaticPaths(){} 
 //only needs when use getStaticProps
 export async function getStaticPaths(){
-  return {
-    fallback: false , //boolean, false: contain all supported path, or true: some pre-generated pages
+  return {  //blocking - list of the path may not be exhausive, maybe more valid pages, user would not see anything until the page is pre-generated 
+    fallback: blocking , //boolean, false: contain all supported path, or true: some pre-generated pages
     path: [
       {params: {  //params is must
          
