@@ -18,7 +18,9 @@
 initial setup
 npx create-next-app
 yarn create next-app
-  
+
+npm run dev
+
 
 The React Framework for Production
 - React: you will write React code, you still build React components and use React features (props, state, context...)
