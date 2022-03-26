@@ -30,6 +30,9 @@ npm run dev
 /styles - styles
 
 
+NextJS suppports modern react setup, will be added befind the scene so no need import React
+
+
 The React Framework for Production
 - React: you will write React code, you still build React components and use React features (props, state, context...)
         NextJS just enhances your react app and adds more features
