@@ -19,7 +19,12 @@ initial setup
 npx create-next-app
 yarn create next-app
 
+npm install
 npm run dev
+
+/page - file based routing
+/public - public resources
+/styles - styles
 
 
 The React Framework for Production
