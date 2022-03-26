@@ -31,3 +31,27 @@ export default function DetailPage() {
 
   return <div>The Detail Page</div>;
 }
+
+
+//Linking Between Pages
+import Link from "next/link"; //stay on the same page -  single page application
+import { Fragment } from "react";
+
+export default function index() {
+  return (
+    <Fragment>
+      <h1>The News Page</h1>
+      <ul>
+        <li>
+          <Link href="/news/nextjs-is-great">NextJS is a great framework</Link>
+        </li>
+        <li>Something Else</li>
+      </ul>
+    </Fragment>
+  );
+}
+
+//if we just use a tag, not the link, which sends a new request to the backend, fetch a new html page, whenever the user navigates around
+//we can use Link from next to stay on the same page within SPA
+
+  
