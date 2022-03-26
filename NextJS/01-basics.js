@@ -22,7 +22,10 @@ yarn create next-app
 npm install
 npm run dev
 
-/page - file based routing
+/pages - file based routing
+        [].js   - dynamic identifier
+        path.js - our-domain.com/path
+        /news/details.js  - our-domain.com/news/details/
 /public - public resources
 /styles - styles
 
