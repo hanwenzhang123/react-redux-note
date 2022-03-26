@@ -22,16 +22,6 @@ yarn create next-app
 npm install
 npm run dev
 
-/pages - file based routing
-        [].js   - dynamic identifier
-        path.js - our-domain.com/path
-        /news/details.js  - our-domain.com/news/details/
-/public - public resources
-/styles - styles
-
-
-NextJS suppports modern react setup, will be added befind the scene so no need import React
-
 
 The React Framework for Production
 - React: you will write React code, you still build React components and use React features (props, state, context...)
