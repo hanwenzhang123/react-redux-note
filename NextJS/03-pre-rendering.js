@@ -59,4 +59,30 @@ export async function getServerSideProps(context){  //context parameter that you
 3. getStaticPaths(){} 
 //only needs when use getStaticProps
 export async function getStaticPaths(){
+  return {
+    fallback: false , //boolean, false: contain all supported path, or true: some pre-generated pages
+    path: [
+      {params: {  //params is must
+         
+      }}  //one object per version of this dynamic page
+       //if you have multiple dynamic segments, then you would have multiple keys in this nested object
+    ]
+  }
 } 
+
+export async function getStaticProps(context){ //context parameter will not hold req and res
+  //fetch data for a single meetup
+  //context.params => an object
+  //identifiers between square brackets will be properties
+  //values will be the actual values encoded in the url
+  
+  const meetupId = context.params.meetupId; //pre-generated during the build process
+  
+  return({
+    props: {
+      meetupData: {
+        
+      }
+    }
+  })
+}
