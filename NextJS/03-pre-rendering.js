@@ -8,6 +8,10 @@ two forms of pre-rendering
 - static-site generation: getStaticProps()
 - server-side rendering: getServerSideProps() 
 
+getStaticProps() - static-site generation, fetch data during build time, faster when data not change all the time and no needs access to request object
+getStaticPaths() - dynamically generate paths based on the data we are fetching, can only be used with getStaticProps
+getServerSideProps() - server-side rendering, regenerating and fetching data for every incoming request
+
 when developer build site for production
 when you build for production run the npm run build script
 
