@@ -21,7 +21,6 @@ import { useRouter } from "next/router";
 
 export default function DetailPage() {
   const router = useRouter();           //contain the parameter in the route
-  // const { id } = router.query
   
   const newId = router.query.newsId;
 
